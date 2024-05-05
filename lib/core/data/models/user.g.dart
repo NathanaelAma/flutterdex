@@ -6,9 +6,9 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AuthenticatedUserData _$$AuthenticatedUserDataFromJson(
+_$AuthenticatedUserDataImpl _$$AuthenticatedUserDataImplFromJson(
         Map<String, dynamic> json) =>
-    _$AuthenticatedUserData(
+    _$AuthenticatedUserDataImpl(
       id: json['id'] as String?,
       creationDate: _$JsonConverterFromJson<Timestamp, DateTime>(
           json['creation_date'], const TimestampConverter().fromJson),
@@ -20,8 +20,8 @@ _$AuthenticatedUserData _$$AuthenticatedUserDataFromJson(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$AuthenticatedUserDataToJson(
-    _$AuthenticatedUserData instance) {
+Map<String, dynamic> _$$AuthenticatedUserDataImplToJson(
+    _$AuthenticatedUserDataImpl instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -54,22 +54,26 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$AnonymousUserData _$$AnonymousUserDataFromJson(Map<String, dynamic> json) =>
-    _$AnonymousUserData(
+_$AnonymousUserDataImpl _$$AnonymousUserDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnonymousUserDataImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$AnonymousUserDataToJson(_$AnonymousUserData instance) =>
+Map<String, dynamic> _$$AnonymousUserDataImplToJson(
+        _$AnonymousUserDataImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };
 
-_$LoadingUserData _$$LoadingUserDataFromJson(Map<String, dynamic> json) =>
-    _$LoadingUserData(
+_$LoadingUserDataImpl _$$LoadingUserDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LoadingUserDataImpl(
       $type: json['runtimeType'] as String?,
     );
 
-Map<String, dynamic> _$$LoadingUserDataToJson(_$LoadingUserData instance) =>
+Map<String, dynamic> _$$LoadingUserDataImplToJson(
+        _$LoadingUserDataImpl instance) =>
     <String, dynamic>{
       'runtimeType': instance.$type,
     };

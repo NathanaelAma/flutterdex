@@ -1,5 +1,5 @@
-import 'package:apparence_kit/modules/authentication/providers/models/email.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/password.dart';
+import 'package:yapdex/modules/authentication/providers/models/email.dart';
+import 'package:yapdex/modules/authentication/providers/models/password.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'signup_state.freezed.dart';

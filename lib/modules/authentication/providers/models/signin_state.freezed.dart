@@ -12,7 +12,7 @@ part of 'signin_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SigninState {
@@ -101,22 +101,22 @@ class _$SigninStateCopyWithImpl<$Res, $Val extends SigninState>
 }
 
 /// @nodoc
-abstract class _$$SigninStateDataCopyWith<$Res>
+abstract class _$$SigninStateDataImplCopyWith<$Res>
     implements $SigninStateCopyWith<$Res> {
-  factory _$$SigninStateDataCopyWith(
-          _$SigninStateData value, $Res Function(_$SigninStateData) then) =
-      __$$SigninStateDataCopyWithImpl<$Res>;
+  factory _$$SigninStateDataImplCopyWith(_$SigninStateDataImpl value,
+          $Res Function(_$SigninStateDataImpl) then) =
+      __$$SigninStateDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Email email, Password password});
 }
 
 /// @nodoc
-class __$$SigninStateDataCopyWithImpl<$Res>
-    extends _$SigninStateCopyWithImpl<$Res, _$SigninStateData>
-    implements _$$SigninStateDataCopyWith<$Res> {
-  __$$SigninStateDataCopyWithImpl(
-      _$SigninStateData _value, $Res Function(_$SigninStateData) _then)
+class __$$SigninStateDataImplCopyWithImpl<$Res>
+    extends _$SigninStateCopyWithImpl<$Res, _$SigninStateDataImpl>
+    implements _$$SigninStateDataImplCopyWith<$Res> {
+  __$$SigninStateDataImplCopyWithImpl(
+      _$SigninStateDataImpl _value, $Res Function(_$SigninStateDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$SigninStateDataCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$SigninStateData(
+    return _then(_$SigninStateDataImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -140,8 +140,8 @@ class __$$SigninStateDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SigninStateData extends SigninStateData {
-  const _$SigninStateData({required this.email, required this.password})
+class _$SigninStateDataImpl extends SigninStateData {
+  const _$SigninStateDataImpl({required this.email, required this.password})
       : super._();
 
   @override
@@ -155,10 +155,10 @@ class _$SigninStateData extends SigninStateData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SigninStateData &&
+            other is _$SigninStateDataImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -170,8 +170,9 @@ class _$SigninStateData extends SigninStateData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SigninStateDataCopyWith<_$SigninStateData> get copyWith =>
-      __$$SigninStateDataCopyWithImpl<_$SigninStateData>(this, _$identity);
+  _$$SigninStateDataImplCopyWith<_$SigninStateDataImpl> get copyWith =>
+      __$$SigninStateDataImplCopyWithImpl<_$SigninStateDataImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -239,7 +240,7 @@ class _$SigninStateData extends SigninStateData {
 abstract class SigninStateData extends SigninState {
   const factory SigninStateData(
       {required final Email email,
-      required final Password password}) = _$SigninStateData;
+      required final Password password}) = _$SigninStateDataImpl;
   const SigninStateData._() : super._();
 
   @override
@@ -248,27 +249,27 @@ abstract class SigninStateData extends SigninState {
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$$SigninStateDataCopyWith<_$SigninStateData> get copyWith =>
+  _$$SigninStateDataImplCopyWith<_$SigninStateDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SigninStateSendingCopyWith<$Res>
+abstract class _$$SigninStateSendingImplCopyWith<$Res>
     implements $SigninStateCopyWith<$Res> {
-  factory _$$SigninStateSendingCopyWith(_$SigninStateSending value,
-          $Res Function(_$SigninStateSending) then) =
-      __$$SigninStateSendingCopyWithImpl<$Res>;
+  factory _$$SigninStateSendingImplCopyWith(_$SigninStateSendingImpl value,
+          $Res Function(_$SigninStateSendingImpl) then) =
+      __$$SigninStateSendingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Email email, Password password});
 }
 
 /// @nodoc
-class __$$SigninStateSendingCopyWithImpl<$Res>
-    extends _$SigninStateCopyWithImpl<$Res, _$SigninStateSending>
-    implements _$$SigninStateSendingCopyWith<$Res> {
-  __$$SigninStateSendingCopyWithImpl(
-      _$SigninStateSending _value, $Res Function(_$SigninStateSending) _then)
+class __$$SigninStateSendingImplCopyWithImpl<$Res>
+    extends _$SigninStateCopyWithImpl<$Res, _$SigninStateSendingImpl>
+    implements _$$SigninStateSendingImplCopyWith<$Res> {
+  __$$SigninStateSendingImplCopyWithImpl(_$SigninStateSendingImpl _value,
+      $Res Function(_$SigninStateSendingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -277,7 +278,7 @@ class __$$SigninStateSendingCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$SigninStateSending(
+    return _then(_$SigninStateSendingImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -292,8 +293,8 @@ class __$$SigninStateSendingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SigninStateSending extends SigninStateSending {
-  const _$SigninStateSending({required this.email, required this.password})
+class _$SigninStateSendingImpl extends SigninStateSending {
+  const _$SigninStateSendingImpl({required this.email, required this.password})
       : super._();
 
   @override
@@ -307,10 +308,10 @@ class _$SigninStateSending extends SigninStateSending {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SigninStateSending &&
+            other is _$SigninStateSendingImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -322,8 +323,8 @@ class _$SigninStateSending extends SigninStateSending {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SigninStateSendingCopyWith<_$SigninStateSending> get copyWith =>
-      __$$SigninStateSendingCopyWithImpl<_$SigninStateSending>(
+  _$$SigninStateSendingImplCopyWith<_$SigninStateSendingImpl> get copyWith =>
+      __$$SigninStateSendingImplCopyWithImpl<_$SigninStateSendingImpl>(
           this, _$identity);
 
   @override
@@ -392,7 +393,7 @@ class _$SigninStateSending extends SigninStateSending {
 abstract class SigninStateSending extends SigninState {
   const factory SigninStateSending(
       {required final Email email,
-      required final Password password}) = _$SigninStateSending;
+      required final Password password}) = _$SigninStateSendingImpl;
   const SigninStateSending._() : super._();
 
   @override
@@ -401,6 +402,6 @@ abstract class SigninStateSending extends SigninState {
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$$SigninStateSendingCopyWith<_$SigninStateSending> get copyWith =>
+  _$$SigninStateSendingImplCopyWith<_$SigninStateSendingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

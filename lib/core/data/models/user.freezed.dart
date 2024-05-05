@@ -12,7 +12,7 @@ part of 'user.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 User _$UserFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -129,10 +129,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 }
 
 /// @nodoc
-abstract class _$$AuthenticatedUserDataCopyWith<$Res> {
-  factory _$$AuthenticatedUserDataCopyWith(_$AuthenticatedUserData value,
-          $Res Function(_$AuthenticatedUserData) then) =
-      __$$AuthenticatedUserDataCopyWithImpl<$Res>;
+abstract class _$$AuthenticatedUserDataImplCopyWith<$Res> {
+  factory _$$AuthenticatedUserDataImplCopyWith(
+          _$AuthenticatedUserDataImpl value,
+          $Res Function(_$AuthenticatedUserDataImpl) then) =
+      __$$AuthenticatedUserDataImplCopyWithImpl<$Res>;
   @useResult
   $Res call(
       {@JsonKey(toJson: Converters.id, includeIfNull: false) String? id,
@@ -148,11 +149,11 @@ abstract class _$$AuthenticatedUserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AuthenticatedUserDataCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$AuthenticatedUserData>
-    implements _$$AuthenticatedUserDataCopyWith<$Res> {
-  __$$AuthenticatedUserDataCopyWithImpl(_$AuthenticatedUserData _value,
-      $Res Function(_$AuthenticatedUserData) _then)
+class __$$AuthenticatedUserDataImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$AuthenticatedUserDataImpl>
+    implements _$$AuthenticatedUserDataImplCopyWith<$Res> {
+  __$$AuthenticatedUserDataImplCopyWithImpl(_$AuthenticatedUserDataImpl _value,
+      $Res Function(_$AuthenticatedUserDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -165,7 +166,7 @@ class __$$AuthenticatedUserDataCopyWithImpl<$Res>
     Object? name = null,
     Object? avatarPath = freezed,
   }) {
-    return _then(_$AuthenticatedUserData(
+    return _then(_$AuthenticatedUserDataImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -196,8 +197,8 @@ class __$$AuthenticatedUserDataCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AuthenticatedUserData extends AuthenticatedUserData {
-  const _$AuthenticatedUserData(
+class _$AuthenticatedUserDataImpl extends AuthenticatedUserData {
+  const _$AuthenticatedUserDataImpl(
       {@JsonKey(toJson: Converters.id, includeIfNull: false) this.id,
       @TimestampConverter() @JsonKey(name: 'creation_date') this.creationDate,
       @TimestampConverter()
@@ -210,8 +211,8 @@ class _$AuthenticatedUserData extends AuthenticatedUserData {
       : $type = $type ?? 'authenticated',
         super._();
 
-  factory _$AuthenticatedUserData.fromJson(Map<String, dynamic> json) =>
-      _$$AuthenticatedUserDataFromJson(json);
+  factory _$AuthenticatedUserDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AuthenticatedUserDataImplFromJson(json);
 
   @override
   @JsonKey(toJson: Converters.id, includeIfNull: false)
@@ -240,10 +241,10 @@ class _$AuthenticatedUserData extends AuthenticatedUserData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AuthenticatedUserData &&
+            other is _$AuthenticatedUserDataImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.creationDate, creationDate) ||
                 other.creationDate == creationDate) &&
@@ -263,9 +264,9 @@ class _$AuthenticatedUserData extends AuthenticatedUserData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AuthenticatedUserDataCopyWith<_$AuthenticatedUserData> get copyWith =>
-      __$$AuthenticatedUserDataCopyWithImpl<_$AuthenticatedUserData>(
-          this, _$identity);
+  _$$AuthenticatedUserDataImplCopyWith<_$AuthenticatedUserDataImpl>
+      get copyWith => __$$AuthenticatedUserDataImplCopyWithImpl<
+          _$AuthenticatedUserDataImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -373,7 +374,7 @@ class _$AuthenticatedUserData extends AuthenticatedUserData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AuthenticatedUserDataToJson(
+    return _$$AuthenticatedUserDataImplToJson(
       this,
     );
   }
@@ -390,11 +391,11 @@ abstract class AuthenticatedUserData extends User {
       final DateTime? lastUpdateDate,
       required final String email,
       required final String name,
-      final String? avatarPath}) = _$AuthenticatedUserData;
+      final String? avatarPath}) = _$AuthenticatedUserDataImpl;
   const AuthenticatedUserData._() : super._();
 
   factory AuthenticatedUserData.fromJson(Map<String, dynamic> json) =
-      _$AuthenticatedUserData.fromJson;
+      _$AuthenticatedUserDataImpl.fromJson;
 
   @JsonKey(toJson: Converters.id, includeIfNull: false)
   String? get id;
@@ -408,35 +409,35 @@ abstract class AuthenticatedUserData extends User {
   String get name;
   String? get avatarPath;
   @JsonKey(ignore: true)
-  _$$AuthenticatedUserDataCopyWith<_$AuthenticatedUserData> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AuthenticatedUserDataImplCopyWith<_$AuthenticatedUserDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AnonymousUserDataCopyWith<$Res> {
-  factory _$$AnonymousUserDataCopyWith(
-          _$AnonymousUserData value, $Res Function(_$AnonymousUserData) then) =
-      __$$AnonymousUserDataCopyWithImpl<$Res>;
+abstract class _$$AnonymousUserDataImplCopyWith<$Res> {
+  factory _$$AnonymousUserDataImplCopyWith(_$AnonymousUserDataImpl value,
+          $Res Function(_$AnonymousUserDataImpl) then) =
+      __$$AnonymousUserDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AnonymousUserDataCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$AnonymousUserData>
-    implements _$$AnonymousUserDataCopyWith<$Res> {
-  __$$AnonymousUserDataCopyWithImpl(
-      _$AnonymousUserData _value, $Res Function(_$AnonymousUserData) _then)
+class __$$AnonymousUserDataImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$AnonymousUserDataImpl>
+    implements _$$AnonymousUserDataImplCopyWith<$Res> {
+  __$$AnonymousUserDataImplCopyWithImpl(_$AnonymousUserDataImpl _value,
+      $Res Function(_$AnonymousUserDataImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AnonymousUserData extends AnonymousUserData {
-  const _$AnonymousUserData({final String? $type})
+class _$AnonymousUserDataImpl extends AnonymousUserData {
+  const _$AnonymousUserDataImpl({final String? $type})
       : $type = $type ?? 'anonymous',
         super._();
 
-  factory _$AnonymousUserData.fromJson(Map<String, dynamic> json) =>
-      _$$AnonymousUserDataFromJson(json);
+  factory _$AnonymousUserDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AnonymousUserDataImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -447,9 +448,9 @@ class _$AnonymousUserData extends AnonymousUserData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AnonymousUserData);
+        (other.runtimeType == runtimeType && other is _$AnonymousUserDataImpl);
   }
 
   @JsonKey(ignore: true)
@@ -559,45 +560,45 @@ class _$AnonymousUserData extends AnonymousUserData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AnonymousUserDataToJson(
+    return _$$AnonymousUserDataImplToJson(
       this,
     );
   }
 }
 
 abstract class AnonymousUserData extends User {
-  const factory AnonymousUserData() = _$AnonymousUserData;
+  const factory AnonymousUserData() = _$AnonymousUserDataImpl;
   const AnonymousUserData._() : super._();
 
   factory AnonymousUserData.fromJson(Map<String, dynamic> json) =
-      _$AnonymousUserData.fromJson;
+      _$AnonymousUserDataImpl.fromJson;
 }
 
 /// @nodoc
-abstract class _$$LoadingUserDataCopyWith<$Res> {
-  factory _$$LoadingUserDataCopyWith(
-          _$LoadingUserData value, $Res Function(_$LoadingUserData) then) =
-      __$$LoadingUserDataCopyWithImpl<$Res>;
+abstract class _$$LoadingUserDataImplCopyWith<$Res> {
+  factory _$$LoadingUserDataImplCopyWith(_$LoadingUserDataImpl value,
+          $Res Function(_$LoadingUserDataImpl) then) =
+      __$$LoadingUserDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$LoadingUserDataCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$LoadingUserData>
-    implements _$$LoadingUserDataCopyWith<$Res> {
-  __$$LoadingUserDataCopyWithImpl(
-      _$LoadingUserData _value, $Res Function(_$LoadingUserData) _then)
+class __$$LoadingUserDataImplCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$LoadingUserDataImpl>
+    implements _$$LoadingUserDataImplCopyWith<$Res> {
+  __$$LoadingUserDataImplCopyWithImpl(
+      _$LoadingUserDataImpl _value, $Res Function(_$LoadingUserDataImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$LoadingUserData extends LoadingUserData {
-  const _$LoadingUserData({final String? $type})
+class _$LoadingUserDataImpl extends LoadingUserData {
+  const _$LoadingUserDataImpl({final String? $type})
       : $type = $type ?? 'loading',
         super._();
 
-  factory _$LoadingUserData.fromJson(Map<String, dynamic> json) =>
-      _$$LoadingUserDataFromJson(json);
+  factory _$LoadingUserDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadingUserDataImplFromJson(json);
 
   @JsonKey(name: 'runtimeType')
   final String $type;
@@ -608,9 +609,9 @@ class _$LoadingUserData extends LoadingUserData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingUserData);
+        (other.runtimeType == runtimeType && other is _$LoadingUserDataImpl);
   }
 
   @JsonKey(ignore: true)
@@ -720,16 +721,16 @@ class _$LoadingUserData extends LoadingUserData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LoadingUserDataToJson(
+    return _$$LoadingUserDataImplToJson(
       this,
     );
   }
 }
 
 abstract class LoadingUserData extends User {
-  const factory LoadingUserData() = _$LoadingUserData;
+  const factory LoadingUserData() = _$LoadingUserDataImpl;
   const LoadingUserData._() : super._();
 
   factory LoadingUserData.fromJson(Map<String, dynamic> json) =
-      _$LoadingUserData.fromJson;
+      _$LoadingUserDataImpl.fromJson;
 }

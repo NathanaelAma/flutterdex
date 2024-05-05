@@ -12,7 +12,7 @@ part of 'environnements.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Environment {
@@ -95,22 +95,22 @@ class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
 }
 
 /// @nodoc
-abstract class _$$DevEnvironmentCopyWith<$Res>
+abstract class _$$DevEnvironmentImplCopyWith<$Res>
     implements $EnvironmentCopyWith<$Res> {
-  factory _$$DevEnvironmentCopyWith(
-          _$DevEnvironment value, $Res Function(_$DevEnvironment) then) =
-      __$$DevEnvironmentCopyWithImpl<$Res>;
+  factory _$$DevEnvironmentImplCopyWith(_$DevEnvironmentImpl value,
+          $Res Function(_$DevEnvironmentImpl) then) =
+      __$$DevEnvironmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$DevEnvironmentCopyWithImpl<$Res>
-    extends _$EnvironmentCopyWithImpl<$Res, _$DevEnvironment>
-    implements _$$DevEnvironmentCopyWith<$Res> {
-  __$$DevEnvironmentCopyWithImpl(
-      _$DevEnvironment _value, $Res Function(_$DevEnvironment) _then)
+class __$$DevEnvironmentImplCopyWithImpl<$Res>
+    extends _$EnvironmentCopyWithImpl<$Res, _$DevEnvironmentImpl>
+    implements _$$DevEnvironmentImplCopyWith<$Res> {
+  __$$DevEnvironmentImplCopyWithImpl(
+      _$DevEnvironmentImpl _value, $Res Function(_$DevEnvironmentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -118,7 +118,7 @@ class __$$DevEnvironmentCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$DevEnvironment(
+    return _then(_$DevEnvironmentImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -129,8 +129,8 @@ class __$$DevEnvironmentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DevEnvironment extends DevEnvironment {
-  const _$DevEnvironment({required this.name}) : super._();
+class _$DevEnvironmentImpl extends DevEnvironment {
+  const _$DevEnvironmentImpl({required this.name}) : super._();
 
   @override
   final String name;
@@ -141,10 +141,10 @@ class _$DevEnvironment extends DevEnvironment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DevEnvironment &&
+            other is _$DevEnvironmentImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -154,8 +154,9 @@ class _$DevEnvironment extends DevEnvironment {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DevEnvironmentCopyWith<_$DevEnvironment> get copyWith =>
-      __$$DevEnvironmentCopyWithImpl<_$DevEnvironment>(this, _$identity);
+  _$$DevEnvironmentImplCopyWith<_$DevEnvironmentImpl> get copyWith =>
+      __$$DevEnvironmentImplCopyWithImpl<_$DevEnvironmentImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -221,34 +222,35 @@ class _$DevEnvironment extends DevEnvironment {
 }
 
 abstract class DevEnvironment extends Environment {
-  const factory DevEnvironment({required final String name}) = _$DevEnvironment;
+  const factory DevEnvironment({required final String name}) =
+      _$DevEnvironmentImpl;
   const DevEnvironment._() : super._();
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$DevEnvironmentCopyWith<_$DevEnvironment> get copyWith =>
+  _$$DevEnvironmentImplCopyWith<_$DevEnvironmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ProdEnvironmentCopyWith<$Res>
+abstract class _$$ProdEnvironmentImplCopyWith<$Res>
     implements $EnvironmentCopyWith<$Res> {
-  factory _$$ProdEnvironmentCopyWith(
-          _$ProdEnvironment value, $Res Function(_$ProdEnvironment) then) =
-      __$$ProdEnvironmentCopyWithImpl<$Res>;
+  factory _$$ProdEnvironmentImplCopyWith(_$ProdEnvironmentImpl value,
+          $Res Function(_$ProdEnvironmentImpl) then) =
+      __$$ProdEnvironmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$ProdEnvironmentCopyWithImpl<$Res>
-    extends _$EnvironmentCopyWithImpl<$Res, _$ProdEnvironment>
-    implements _$$ProdEnvironmentCopyWith<$Res> {
-  __$$ProdEnvironmentCopyWithImpl(
-      _$ProdEnvironment _value, $Res Function(_$ProdEnvironment) _then)
+class __$$ProdEnvironmentImplCopyWithImpl<$Res>
+    extends _$EnvironmentCopyWithImpl<$Res, _$ProdEnvironmentImpl>
+    implements _$$ProdEnvironmentImplCopyWith<$Res> {
+  __$$ProdEnvironmentImplCopyWithImpl(
+      _$ProdEnvironmentImpl _value, $Res Function(_$ProdEnvironmentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -256,7 +258,7 @@ class __$$ProdEnvironmentCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$ProdEnvironment(
+    return _then(_$ProdEnvironmentImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -267,8 +269,8 @@ class __$$ProdEnvironmentCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ProdEnvironment extends ProdEnvironment {
-  const _$ProdEnvironment({required this.name}) : super._();
+class _$ProdEnvironmentImpl extends ProdEnvironment {
+  const _$ProdEnvironmentImpl({required this.name}) : super._();
 
   @override
   final String name;
@@ -279,10 +281,10 @@ class _$ProdEnvironment extends ProdEnvironment {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProdEnvironment &&
+            other is _$ProdEnvironmentImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -292,8 +294,9 @@ class _$ProdEnvironment extends ProdEnvironment {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProdEnvironmentCopyWith<_$ProdEnvironment> get copyWith =>
-      __$$ProdEnvironmentCopyWithImpl<_$ProdEnvironment>(this, _$identity);
+  _$$ProdEnvironmentImplCopyWith<_$ProdEnvironmentImpl> get copyWith =>
+      __$$ProdEnvironmentImplCopyWithImpl<_$ProdEnvironmentImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -360,13 +363,13 @@ class _$ProdEnvironment extends ProdEnvironment {
 
 abstract class ProdEnvironment extends Environment {
   const factory ProdEnvironment({required final String name}) =
-      _$ProdEnvironment;
+      _$ProdEnvironmentImpl;
   const ProdEnvironment._() : super._();
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$ProdEnvironmentCopyWith<_$ProdEnvironment> get copyWith =>
+  _$$ProdEnvironmentImplCopyWith<_$ProdEnvironmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

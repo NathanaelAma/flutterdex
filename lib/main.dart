@@ -1,8 +1,8 @@
-import 'package:apparence_kit/core/data/repositories/authentication_repository.dart';
-import 'package:apparence_kit/core/initializer/onstart_widget.dart';
-import 'package:apparence_kit/environnements.dart';
-import 'package:apparence_kit/firebase_options_dev.dart' as firebase_dev;
-import 'package:apparence_kit/router.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/core/initializer/onstart_widget.dart';
+import 'package:yapdex/environnements.dart';
+import 'package:yapdex/firebase_options_dev.dart' as firebase_dev;
+import 'package:yapdex/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

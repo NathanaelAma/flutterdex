@@ -1,7 +1,7 @@
-import 'package:apparence_kit/core/data/repositories/authentication_repository.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/email.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/password.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/signin_state.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/modules/authentication/providers/models/email.dart';
+import 'package:yapdex/modules/authentication/providers/models/password.dart';
+import 'package:yapdex/modules/authentication/providers/models/signin_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

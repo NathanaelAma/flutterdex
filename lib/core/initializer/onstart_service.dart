@@ -1,4 +1,4 @@
-import 'package:apparence_kit/core/initializer/models/run_state.dart';
+import 'package:yapdex/core/initializer/models/run_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

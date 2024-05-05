@@ -12,7 +12,7 @@ part of 'run_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AppRunState {
@@ -75,25 +75,25 @@ class _$AppRunStateCopyWithImpl<$Res, $Val extends AppRunState>
 }
 
 /// @nodoc
-abstract class _$$AppLoadingStateCopyWith<$Res> {
-  factory _$$AppLoadingStateCopyWith(
-          _$AppLoadingState value, $Res Function(_$AppLoadingState) then) =
-      __$$AppLoadingStateCopyWithImpl<$Res>;
+abstract class _$$AppLoadingStateImplCopyWith<$Res> {
+  factory _$$AppLoadingStateImplCopyWith(_$AppLoadingStateImpl value,
+          $Res Function(_$AppLoadingStateImpl) then) =
+      __$$AppLoadingStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppLoadingStateCopyWithImpl<$Res>
-    extends _$AppRunStateCopyWithImpl<$Res, _$AppLoadingState>
-    implements _$$AppLoadingStateCopyWith<$Res> {
-  __$$AppLoadingStateCopyWithImpl(
-      _$AppLoadingState _value, $Res Function(_$AppLoadingState) _then)
+class __$$AppLoadingStateImplCopyWithImpl<$Res>
+    extends _$AppRunStateCopyWithImpl<$Res, _$AppLoadingStateImpl>
+    implements _$$AppLoadingStateImplCopyWith<$Res> {
+  __$$AppLoadingStateImplCopyWithImpl(
+      _$AppLoadingStateImpl _value, $Res Function(_$AppLoadingStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppLoadingState extends AppLoadingState {
-  const _$AppLoadingState() : super._();
+class _$AppLoadingStateImpl extends AppLoadingState {
+  const _$AppLoadingStateImpl() : super._();
 
   @override
   String toString() {
@@ -101,9 +101,9 @@ class _$AppLoadingState extends AppLoadingState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppLoadingState);
+        (other.runtimeType == runtimeType && other is _$AppLoadingStateImpl);
   }
 
   @override
@@ -173,30 +173,30 @@ class _$AppLoadingState extends AppLoadingState {
 }
 
 abstract class AppLoadingState extends AppRunState {
-  const factory AppLoadingState() = _$AppLoadingState;
+  const factory AppLoadingState() = _$AppLoadingStateImpl;
   const AppLoadingState._() : super._();
 }
 
 /// @nodoc
-abstract class _$$AppReadyStateCopyWith<$Res> {
-  factory _$$AppReadyStateCopyWith(
-          _$AppReadyState value, $Res Function(_$AppReadyState) then) =
-      __$$AppReadyStateCopyWithImpl<$Res>;
+abstract class _$$AppReadyStateImplCopyWith<$Res> {
+  factory _$$AppReadyStateImplCopyWith(
+          _$AppReadyStateImpl value, $Res Function(_$AppReadyStateImpl) then) =
+      __$$AppReadyStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AppReadyStateCopyWithImpl<$Res>
-    extends _$AppRunStateCopyWithImpl<$Res, _$AppReadyState>
-    implements _$$AppReadyStateCopyWith<$Res> {
-  __$$AppReadyStateCopyWithImpl(
-      _$AppReadyState _value, $Res Function(_$AppReadyState) _then)
+class __$$AppReadyStateImplCopyWithImpl<$Res>
+    extends _$AppRunStateCopyWithImpl<$Res, _$AppReadyStateImpl>
+    implements _$$AppReadyStateImplCopyWith<$Res> {
+  __$$AppReadyStateImplCopyWithImpl(
+      _$AppReadyStateImpl _value, $Res Function(_$AppReadyStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AppReadyState extends AppReadyState {
-  const _$AppReadyState() : super._();
+class _$AppReadyStateImpl extends AppReadyState {
+  const _$AppReadyStateImpl() : super._();
 
   @override
   String toString() {
@@ -204,9 +204,9 @@ class _$AppReadyState extends AppReadyState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AppReadyState);
+        (other.runtimeType == runtimeType && other is _$AppReadyStateImpl);
   }
 
   @override
@@ -276,6 +276,6 @@ class _$AppReadyState extends AppReadyState {
 }
 
 abstract class AppReadyState extends AppRunState {
-  const factory AppReadyState() = _$AppReadyState;
+  const factory AppReadyState() = _$AppReadyStateImpl;
   const AppReadyState._() : super._();
 }

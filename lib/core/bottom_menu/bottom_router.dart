@@ -1,5 +1,5 @@
 import 'package:animations/animations.dart';
-import 'package:apparence_kit/modules/profile/settings_page.dart';
+import 'package:yapdex/modules/profile/settings_page.dart';
 import 'package:bart/bart.dart';
 import 'package:flutter/material.dart';
 

@@ -1,9 +1,9 @@
-import 'package:apparence_kit/core/data/repositories/authentication_repository.dart';
-import 'package:apparence_kit/core/widgets/page_background.dart';
-import 'package:apparence_kit/core/widgets/toast.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/email.dart';
-import 'package:apparence_kit/modules/authentication/providers/models/password.dart';
-import 'package:apparence_kit/modules/authentication/providers/signup_state_provider.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/core/widgets/page_background.dart';
+import 'package:yapdex/core/widgets/toast.dart';
+import 'package:yapdex/modules/authentication/providers/models/email.dart';
+import 'package:yapdex/modules/authentication/providers/models/password.dart';
+import 'package:yapdex/modules/authentication/providers/signup_state_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

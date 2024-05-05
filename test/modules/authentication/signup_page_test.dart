@@ -1,6 +1,6 @@
-import 'package:apparence_kit/core/data/repositories/authentication_repository.dart';
-import 'package:apparence_kit/modules/authentication/providers/signup_state_provider.dart';
-import 'package:apparence_kit/modules/authentication/ui/signup_page.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/modules/authentication/providers/signup_state_provider.dart';
+import 'package:yapdex/modules/authentication/ui/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';

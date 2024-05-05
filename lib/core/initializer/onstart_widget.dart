@@ -1,4 +1,4 @@
-import 'package:apparence_kit/core/initializer/onstart_service.dart';
+import 'package:yapdex/core/initializer/onstart_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

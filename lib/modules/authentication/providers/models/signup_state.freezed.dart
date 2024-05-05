@@ -12,7 +12,7 @@ part of 'signup_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SignupState {
@@ -101,22 +101,22 @@ class _$SignupStateCopyWithImpl<$Res, $Val extends SignupState>
 }
 
 /// @nodoc
-abstract class _$$SignupStateDataCopyWith<$Res>
+abstract class _$$SignupStateDataImplCopyWith<$Res>
     implements $SignupStateCopyWith<$Res> {
-  factory _$$SignupStateDataCopyWith(
-          _$SignupStateData value, $Res Function(_$SignupStateData) then) =
-      __$$SignupStateDataCopyWithImpl<$Res>;
+  factory _$$SignupStateDataImplCopyWith(_$SignupStateDataImpl value,
+          $Res Function(_$SignupStateDataImpl) then) =
+      __$$SignupStateDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Email email, Password password});
 }
 
 /// @nodoc
-class __$$SignupStateDataCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$SignupStateData>
-    implements _$$SignupStateDataCopyWith<$Res> {
-  __$$SignupStateDataCopyWithImpl(
-      _$SignupStateData _value, $Res Function(_$SignupStateData) _then)
+class __$$SignupStateDataImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignupStateDataImpl>
+    implements _$$SignupStateDataImplCopyWith<$Res> {
+  __$$SignupStateDataImplCopyWithImpl(
+      _$SignupStateDataImpl _value, $Res Function(_$SignupStateDataImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$SignupStateDataCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$SignupStateData(
+    return _then(_$SignupStateDataImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -140,8 +140,8 @@ class __$$SignupStateDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupStateData extends SignupStateData {
-  const _$SignupStateData({required this.email, required this.password})
+class _$SignupStateDataImpl extends SignupStateData {
+  const _$SignupStateDataImpl({required this.email, required this.password})
       : super._();
 
   @override
@@ -155,10 +155,10 @@ class _$SignupStateData extends SignupStateData {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignupStateData &&
+            other is _$SignupStateDataImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -170,8 +170,9 @@ class _$SignupStateData extends SignupStateData {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignupStateDataCopyWith<_$SignupStateData> get copyWith =>
-      __$$SignupStateDataCopyWithImpl<_$SignupStateData>(this, _$identity);
+  _$$SignupStateDataImplCopyWith<_$SignupStateDataImpl> get copyWith =>
+      __$$SignupStateDataImplCopyWithImpl<_$SignupStateDataImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -239,7 +240,7 @@ class _$SignupStateData extends SignupStateData {
 abstract class SignupStateData extends SignupState {
   const factory SignupStateData(
       {required final Email email,
-      required final Password password}) = _$SignupStateData;
+      required final Password password}) = _$SignupStateDataImpl;
   const SignupStateData._() : super._();
 
   @override
@@ -248,27 +249,27 @@ abstract class SignupStateData extends SignupState {
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$$SignupStateDataCopyWith<_$SignupStateData> get copyWith =>
+  _$$SignupStateDataImplCopyWith<_$SignupStateDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SignupStateSendingCopyWith<$Res>
+abstract class _$$SignupStateSendingImplCopyWith<$Res>
     implements $SignupStateCopyWith<$Res> {
-  factory _$$SignupStateSendingCopyWith(_$SignupStateSending value,
-          $Res Function(_$SignupStateSending) then) =
-      __$$SignupStateSendingCopyWithImpl<$Res>;
+  factory _$$SignupStateSendingImplCopyWith(_$SignupStateSendingImpl value,
+          $Res Function(_$SignupStateSendingImpl) then) =
+      __$$SignupStateSendingImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Email email, Password password});
 }
 
 /// @nodoc
-class __$$SignupStateSendingCopyWithImpl<$Res>
-    extends _$SignupStateCopyWithImpl<$Res, _$SignupStateSending>
-    implements _$$SignupStateSendingCopyWith<$Res> {
-  __$$SignupStateSendingCopyWithImpl(
-      _$SignupStateSending _value, $Res Function(_$SignupStateSending) _then)
+class __$$SignupStateSendingImplCopyWithImpl<$Res>
+    extends _$SignupStateCopyWithImpl<$Res, _$SignupStateSendingImpl>
+    implements _$$SignupStateSendingImplCopyWith<$Res> {
+  __$$SignupStateSendingImplCopyWithImpl(_$SignupStateSendingImpl _value,
+      $Res Function(_$SignupStateSendingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -277,7 +278,7 @@ class __$$SignupStateSendingCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$SignupStateSending(
+    return _then(_$SignupStateSendingImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -292,8 +293,8 @@ class __$$SignupStateSendingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignupStateSending extends SignupStateSending {
-  const _$SignupStateSending({required this.email, required this.password})
+class _$SignupStateSendingImpl extends SignupStateSending {
+  const _$SignupStateSendingImpl({required this.email, required this.password})
       : super._();
 
   @override
@@ -307,10 +308,10 @@ class _$SignupStateSending extends SignupStateSending {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SignupStateSending &&
+            other is _$SignupStateSendingImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -322,8 +323,8 @@ class _$SignupStateSending extends SignupStateSending {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SignupStateSendingCopyWith<_$SignupStateSending> get copyWith =>
-      __$$SignupStateSendingCopyWithImpl<_$SignupStateSending>(
+  _$$SignupStateSendingImplCopyWith<_$SignupStateSendingImpl> get copyWith =>
+      __$$SignupStateSendingImplCopyWithImpl<_$SignupStateSendingImpl>(
           this, _$identity);
 
   @override
@@ -392,7 +393,7 @@ class _$SignupStateSending extends SignupStateSending {
 abstract class SignupStateSending extends SignupState {
   const factory SignupStateSending(
       {required final Email email,
-      required final Password password}) = _$SignupStateSending;
+      required final Password password}) = _$SignupStateSendingImpl;
   const SignupStateSending._() : super._();
 
   @override
@@ -401,6 +402,6 @@ abstract class SignupStateSending extends SignupState {
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$$SignupStateSendingCopyWith<_$SignupStateSending> get copyWith =>
+  _$$SignupStateSendingImplCopyWith<_$SignupStateSendingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

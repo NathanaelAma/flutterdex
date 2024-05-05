@@ -1,6 +1,6 @@
-import 'package:apparence_kit/core/data/models/user.dart' as app;
-import 'package:apparence_kit/core/data/models/user.dart';
-import 'package:apparence_kit/core/initializer/onstart_service.dart';
+import 'package:yapdex/core/data/models/user.dart' as app;
+import 'package:yapdex/core/data/models/user.dart';
+import 'package:yapdex/core/initializer/onstart_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
