@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "541605153087",
-    "project_id": "apparencekit-free",
-    "storage_bucket": "apparencekit-free.appspot.com"
+    "project_number": "1058089107054",
+    "project_id": "yapdex",
+    "storage_bucket": "yapdex.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:541605153087:android:666c7ff4a763206c7eab8a",
+        "mobilesdk_app_id": "1:1058089107054:android:3bee4ee663add4f654707f",
         "android_client_info": {
-          "package_name": "com.example.apparence_kit"
+          "package_name": "com.nathanaelama.yapdex"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "541605153087-894kvbh9gm2mk6a5ol0inssqenk1fnbp.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDxQTNfs6V1T515-CP58-rYBMVZMEbvnIY"
+          "current_key": "AIzaSyD_NsS0rq90kdg8VT0_5bNncx4OItx5l8E"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "541605153087-894kvbh9gm2mk6a5ol0inssqenk1fnbp.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

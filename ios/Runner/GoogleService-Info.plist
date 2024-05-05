@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCRueqmITjrYpb65grt9FjDs6NlHWlCdd4</string>
+	<string>AIzaSyDQEpHwQ4qNZCRvOf8XZPz4NwSlczma6Xk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>541605153087</string>
+	<string>1058089107054</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.apparenceKit</string>
+	<string>com.nathanaelama.yapdex</string>
 	<key>PROJECT_ID</key>
-	<string>apparencekit-free</string>
+	<string>yapdex</string>
 	<key>STORAGE_BUCKET</key>
-	<string>apparencekit-free.appspot.com</string>
+	<string>yapdex.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:541605153087:ios:f7acff28cc2453e47eab8a</string>
+	<string>1:1058089107054:ios:b53b57a0412d74b254707f</string>
 </dict>
 </plist>
