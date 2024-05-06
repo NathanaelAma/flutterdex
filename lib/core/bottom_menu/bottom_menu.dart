@@ -1,6 +1,6 @@
-import 'package:yapdex/core/bottom_menu/bottom_router.dart';
 import 'package:bart/bart.dart' as bart;
 import 'package:flutter/material.dart';
+import 'package:yapdex/core/bottom_menu/bottom_router.dart';
 
 /// This bottom menu is powered by Bart packages
 /// https://pub.dev/packages/bart

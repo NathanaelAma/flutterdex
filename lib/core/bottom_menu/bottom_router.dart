@@ -1,7 +1,22 @@
 import 'package:animations/animations.dart';
-import 'package:yapdex/modules/profile/settings_page.dart';
 import 'package:bart/bart.dart';
 import 'package:flutter/material.dart';
+import 'package:yapdex/modules/profile/settings_page.dart';
+
+const bottomBarTransitionDuration = Duration(milliseconds: 300);
+
+Widget bottomBarTransition(
+  BuildContext c,
+  Animation<double> a1,
+  Animation<double> a2,
+  Widget child,
+) =>
+    FadeThroughTransition(
+      animation: a1,
+      secondaryAnimation: a2,
+      fillColor: Colors.transparent,
+      child: child,
+    );
 
 List<BartMenuRoute> subRoutes() {
   return [
@@ -62,18 +77,3 @@ class PageFake extends StatelessWidget {
     );
   }
 }
-
-Widget bottomBarTransition(
-  BuildContext c,
-  Animation<double> a1,
-  Animation<double> a2,
-  Widget child,
-) =>
-    FadeThroughTransition(
-      animation: a1,
-      secondaryAnimation: a2,
-      fillColor: Colors.transparent,
-      child: child,
-    );
-
-const bottomBarTransitionDuration = Duration(milliseconds: 300);

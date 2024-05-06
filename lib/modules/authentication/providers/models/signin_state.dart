@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:yapdex/modules/authentication/providers/models/email.dart';
 import 'package:yapdex/modules/authentication/providers/models/password.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'signin_state.freezed.dart';
 

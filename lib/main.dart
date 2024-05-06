@@ -1,13 +1,13 @@
-import 'package:yapdex/core/data/repositories/authentication_repository.dart';
-import 'package:yapdex/core/initializer/onstart_widget.dart';
-import 'package:yapdex/environnements.dart';
-import 'package:yapdex/firebase_options_dev.dart' as firebase_dev;
-import 'package:yapdex/router.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/core/initializer/onstart_widget.dart';
+import 'package:yapdex/environnements.dart';
+import 'package:yapdex/firebase_options_dev.dart' as firebase_dev;
+import 'package:yapdex/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

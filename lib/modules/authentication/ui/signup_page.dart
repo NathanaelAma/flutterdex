@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yapdex/core/data/repositories/authentication_repository.dart';
 import 'package:yapdex/core/widgets/page_background.dart';
 import 'package:yapdex/core/widgets/toast.dart';
 import 'package:yapdex/modules/authentication/providers/models/email.dart';
 import 'package:yapdex/modules/authentication/providers/models/password.dart';
 import 'package:yapdex/modules/authentication/providers/signup_state_provider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class SignupPage extends ConsumerWidget {
   static final _formKey = GlobalKey<FormState>();
