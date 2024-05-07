@@ -178,5 +178,7 @@
 	"detailSpritesShinyLabel": "Shiny",
 	"@detailSpritesShinyLabel": {
 		"description": "Label for 'Shiny' sprites in Pokémon details."
-	}
+	},
+	"detailBreedingCycles": "Cycles",
+	"detailBreedingStepsLabel": "Steps"
 }
