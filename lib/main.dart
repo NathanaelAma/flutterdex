@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:yapdex/app.dart';
-import 'package:yapdex/environnements.dart';
+import 'package:yapdex/environements.dart';
 import 'package:yapdex/firebase_options_dev.dart' as firebase_dev;
 
 void main() async {
