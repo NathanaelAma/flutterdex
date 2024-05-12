@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yapdex/core/l10n/l10n.dart';
 import 'package:yapdex/core/router/router.dart';
 
 class App extends ConsumerWidget {
@@ -8,10 +9,12 @@ class App extends ConsumerWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final goRouter = ref.watch(goRouterProvider);
+    final router = ref.watch(goRouterProvider);
 
     return MaterialApp.router(
-      title: 'Flutter Starter Kit',
+      title: "YAPDex",
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -27,7 +30,10 @@ class App extends ConsumerWidget {
       //     ),
       //   ),
       // ),
-      routerConfig: goRouter,
+      // routerConfig: router,
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
     );
   }
 }

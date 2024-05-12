@@ -1,11 +1,11 @@
-import 'package:yapdex/core/data/repositories/authentication_repository.dart';
-import 'package:yapdex/modules/authentication/providers/signup_state_provider.dart';
-import 'package:yapdex/modules/authentication/ui/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/modules/authentication/providers/signup_state_provider.dart';
+import 'package:yapdex/modules/authentication/ui/signup_page.dart';
 
 import '../../firebase_test_utils.dart';
 import '../../test_utils.dart';
