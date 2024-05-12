@@ -180,5 +180,12 @@
 		"description": "Label for 'Shiny' sprites in Pokémon details."
 	},
 	"detailBreedingCycles": "Cycles",
-	"detailBreedingStepsLabel": "Steps"
+	"detailBreedingStepsLabel": "Steps",
+	"appTitle": "YAPDex",
+	"@appTitle": {
+		"description": "Application Title"
+	},
+	"navigationItemsLabel": "Items",
+	"navigationMovesLabel": "Moves",
+	"navigationPokemonLabel": "Pokemon"
 }
