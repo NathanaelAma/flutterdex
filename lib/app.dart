@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yapdex/core/l10n/l10n.dart';
 import 'package:yapdex/core/router/router.dart';
+import 'package:yapdex/modules/pokemon/providers/pokemon_provider.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -10,6 +11,8 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(goRouterProvider);
+    //TODO: create splash screen to hide initial loading
+    Future(() {ref.read(pokemonListProvider.notifier).getPokemonList();});
 
     return MaterialApp.router(
       title: "YAPDex",

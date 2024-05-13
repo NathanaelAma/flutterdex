@@ -5,6 +5,7 @@ import 'package:yapdex/core/data/repositories/authentication_repository.dart';
 import 'package:yapdex/core/initializer/onstart_widget.dart';
 import 'package:yapdex/core/widgets/scaffold.dart';
 import 'package:yapdex/modules/authentication/ui/signin_page.dart';
+import 'package:yapdex/modules/pokemon/ui/pokemon_list_screen.dart';
 
 enum AppRoute { pokemon, moves, items, pokemonDetail, moveDetail, itemDetail }
 
@@ -34,22 +35,22 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: "/${AppRoute.pokemon.name}",
             name: AppRoute.pokemon.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) =>
-                NoTransitionPage(key: state.pageKey, child: const Text('Pokemon')),
+            pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey, child: const PokemonListScreen()),
           ),
           GoRoute(
             path: "/${AppRoute.moves.name}",
             name: AppRoute.moves.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) =>
-                NoTransitionPage(key: state.pageKey, child: const Text('Moves')),
+            pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey, child: const Text('Moves')),
           ),
           GoRoute(
             path: "/${AppRoute.items.name}",
             name: AppRoute.items.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) =>
-                NoTransitionPage(key: state.pageKey, child: const Text('Items')),
+            pageBuilder: (context, state) => NoTransitionPage(
+                key: state.pageKey, child: const Text('Items')),
           ),
         ],
       ),
