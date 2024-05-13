@@ -1,7 +1,6 @@
-// ignore_for_file: avoid_dynamic_calls, join_return_with_assignment
-
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:yapdex/core/data/models/api/api_model.dart';
 import 'package:yapdex/core/data/models/pokemon/pokemon.dart';
 import 'package:yapdex/core/data/models/utility/common.dart';
 
@@ -52,7 +51,6 @@ class PokemonRepository {
   //TODO: add pagination, generation, and other filters
   Future<List<Pokemon>> getPokemons([int limit = 151, int offset = 0]) async {
     try {
-      List<Pokemon> pokemons = [];
       final url = Uri(
           scheme: 'https',
           host: 'pokeapi.co',
@@ -61,17 +59,17 @@ class PokemonRepository {
             'limit': limit.toString(),
             'offset': offset.toString(),
           }).toString();
-      final response = await dio.get(url);
+      final Response<Map<String, dynamic>> response = await dio.get(url);
 
-      final List<NamedAPIResource> data = response.data['results'] as List<NamedAPIResource>;
-          data.map<NamedAPIResource>(
-              (pokemon) => NamedAPIResource.fromJson(pokemon as Map<String, dynamic>))
-          .toList();
-      pokemons = await Future.wait(data.map((pokemon) async {
+      final NamedAPIResourceList resourceList =
+          NamedAPIResourceList.fromJson(response.data!);
+
+      final List<NamedAPIResource> results = resourceList.results;
+
+      return await Future.wait(results.map((pokemon) async {
         final pokemonResponse = await dio.get(pokemon.url);
         return Pokemon.fromJson(pokemonResponse.data as Map<String, dynamic>);
       }));
-      return pokemons;
     } catch (exception) {
       if (kDebugMode) {
         print("exception: $exception");
