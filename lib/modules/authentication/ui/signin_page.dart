@@ -1,11 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:yapdex/core/router/router.dart';
 import 'package:yapdex/core/widgets/toast.dart';
 import 'package:yapdex/modules/authentication/providers/models/email.dart';
 import 'package:yapdex/modules/authentication/providers/models/password.dart';
 import 'package:yapdex/modules/authentication/providers/signin_state_provider.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final _formKey = GlobalKey<FormState>();
+final _formKey = GlobalKey<FormState>(
+  debugLabel: 'signin_form_key',
+);
 
 class SigninPage extends ConsumerWidget {
   final bool canDismiss;
@@ -88,8 +92,10 @@ class SigninPage extends ConsumerWidget {
                         .read(signinStateProvider.notifier)
                         .signin()
                         .then(
-                          (value) => Navigator.of(context)
-                              .pushReplacementNamed('home'),
+                          (value) => {
+                            // {context.goNamed('home'),
+                            ref.read(goRouterProvider).pushNamed("home")
+                          },
                         )
                         .catchError(
                       (err) {
@@ -113,7 +119,7 @@ class SigninPage extends ConsumerWidget {
                 const SizedBox(height: 16),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushReplacementNamed('signup');
+                    context.goNamed('signup');
                   },
                   child: const Text(
                     "Don't have an account? Signup now",

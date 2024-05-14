@@ -1,10 +1,10 @@
-import 'package:yapdex/core/data/models/user.dart' as app;
-import 'package:yapdex/core/data/models/user.dart';
-import 'package:yapdex/core/initializer/onstart_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
+import 'package:yapdex/core/data/models/user.dart' as app;
+import 'package:yapdex/core/data/models/user.dart';
+import 'package:yapdex/core/initializer/onstart_service.dart';
 
 final authRepositoryProvider =
     StateNotifierProvider<AuthenticationRepository, app.User>(

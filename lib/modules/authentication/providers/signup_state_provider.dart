@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yapdex/core/data/repositories/authentication_repository.dart';
 import 'package:yapdex/modules/authentication/providers/models/email.dart';
 import 'package:yapdex/modules/authentication/providers/models/password.dart';
 import 'package:yapdex/modules/authentication/providers/models/signup_state.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final signupStateProvider =
     StateNotifierProvider.autoDispose<SignupStateNotifier, SignupState>(

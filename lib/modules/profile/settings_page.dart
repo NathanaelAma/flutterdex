@@ -1,7 +1,7 @@
-import 'package:yapdex/core/data/repositories/authentication_repository.dart';
-import 'package:yapdex/modules/profile/ui/widgets/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/modules/profile/ui/widgets/avatar.dart';
 
 /// This is an example of a settings page UI.
 /// All data are fake and hardcoded (except for the logout button)

@@ -2,7 +2,7 @@
 // ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
-    show defaultTargetPlatform, kIsWeb, TargetPlatform;
+    show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -50,11 +47,11 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDxQTNfs6V1T515-CP58-rYBMVZMEbvnIY',
-    appId: '1:541605153087:android:666c7ff4a763206c7eab8a',
-    messagingSenderId: '541605153087',
-    projectId: 'apparencekit-free',
-    storageBucket: 'apparencekit-free.appspot.com',
+    apiKey: 'AIzaSyD_NsS0rq90kdg8VT0_5bNncx4OItx5l8E',
+    appId: '1:1058089107054:android:3bee4ee663add4f654707f',
+    messagingSenderId: '1058089107054',
+    projectId: 'yapdex',
+    storageBucket: 'yapdex.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -65,4 +62,14 @@ class DefaultFirebaseOptions {
     storageBucket: 'apparencekit-free.appspot.com',
     iosBundleId: 'com.example.apparenceKit',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyDypRVUb9tp9inPfh_Kda2mn4EG90J_NbQ',
+    appId: '1:1058089107054:web:049c7cd0fb68979b54707f',
+    messagingSenderId: '1058089107054',
+    projectId: 'yapdex',
+    authDomain: 'yapdex.firebaseapp.com',
+    storageBucket: 'yapdex.appspot.com',
+  );
+
 }
