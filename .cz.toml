@@ -3,6 +3,9 @@ name = "cz_conventional_commits"
 tag_format = "$version"
 version_scheme = "semver"
 version = "0.0.0"
+version_files = [
+    "pubspec.yaml:version"
+]
 update_changelog_on_bump = true
 gpg_signe = true
 changelog_incremental = true
