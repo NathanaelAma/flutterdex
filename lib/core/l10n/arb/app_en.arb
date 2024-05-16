@@ -1,191 +1,204 @@
 {
-	"pokemonTypesFighting": "Fighting",
-	"@pokemonTypesFighting": {
-		"description": "Represents the fighting type of Pokémon."
-	},
-	"pokemonTypesFire": "Fire",
-	"@pokemonTypesFire": {
-		"description": "Represents the fire type of Pokémon."
-	},
-	"pokemonTypesFlying": "Flying",
-	"@pokemonTypesFlying": {
-		"description": "Represents the flying type of Pokémon."
-	},
-	"pokemonTypesGhost": "Ghost",
-	"@pokemonTypesGhost": {
-		"description": "Represents the ghost type of Pokémon."
-	},
-	"pokemonTypesGrass": "Grass",
-	"@pokemonTypesGrass": {
-		"description": "Represents the grass type of Pokémon."
-	},
-	"pokemonTypesGround": "Ground",
-	"@pokemonTypesGround": {
-		"description": "Represents the ground type of Pokémon."
-	},
-	"pokemonTypesNormal": "Normal",
-	"@pokemonTypesNormal": {
-		"description": "Represents the normal type of Pokémon."
-	},
-	"pokemonTypesPoison": "Poison",
-	"@pokemonTypesPoison": {
-		"description": "Represents the poison type of Pokémon."
-	},
-	"pokemonTypesRock": "Rock",
-	"@pokemonTypesRock": {
-		"description": "Represents the rock type of Pokémon."
-	},
-	"pokemonTypesSteel": "Steel",
-	"@pokemonTypesSteel": {
-		"description": "Represents the steel type of Pokémon."
-	},
-	"pokemonTypesWater": "Water",
-	"@pokemonTypesWater": {
-		"description": "Represents the water type of Pokémon."
-	},
-	"pokemonTypesDark": "Dark",
-	"@pokemonTypesDark": {
-		"description": "Represents the dark type of Pokémon."
-	},
-	"pokemonTypesDragon": "Dragon",
-	"@pokemonTypesDragon": {
-		"description": "Represents the dragon type of Pokémon."
-	},
-	"pokemonTypesElectric": "Electric",
-	"@pokemonTypesElectric": {
-		"description": "Represents the electric type of Pokémon."
-	},
-	"pokemonTypesFairy": "Fairy",
-	"@pokemonTypesFairy": {
-		"description": "Represents the fairy type of Pokémon."
-	},
-	"pokemonTypesIce": "Ice",
-	"@pokemonTypesIce": {
-		"description": "Represents the ice type of Pokémon."
-	},
-	"pokemonTypesPsychic": "Psychic",
-	"@pokemonTypesPsychic": {
-		"description": "Represents the psychic type of Pokémon."
-	},
-	"detailAboutLabel": "About",
-	"@detailAboutLabel": {
-		"description": "Label for the 'About' section in Pokémon details."
-	},
-	"detailHeightLabel": "Height",
-	"@detailHeightLabel": {
-		"description": "Label for the 'Height' section in Pokémon details."
-	},
-	"pokemonTypeLabel": "Type",
-	"@pokemonTypeLabel": {
-		"description": "Label for the 'Type' section in Pokémon details."
-	},
-	"pokemonTypesBug": "Bug",
-	"@pokemonTypesBug": {
-		"description": "Represents the bug type of Pokémon."
-	},
-	"searchTitle": "Search",
-	"@searchTitle": {
-		"description": "Title for the search feature."
-	},
-	"detailMovesLabel": "Moves",
-	"@detailMovesLabel": {
-		"description": "Label for the 'Moves' section in Pokémon details."
-	},
-	"detailWeightLabel": "Weight",
-	"@detailWeightLabel": {
-		"description": "Label for the 'Weight' section in Pokémon details."
-	},
-	"sortByNumberLabel": "Number",
-	"@sortByNumberLabel": {
-		"description": "Label for sorting Pokémon by number."
-	},
-	"sortByTitle": "Sort by:",
-	"@sortByTitle": {
-		"description": "Title for the sorting feature."
-	},
-	"sortNameLabel": "Name",
-	"@sortNameLabel": {
-		"description": "Label for sorting Pokémon by name."
-	},
-	"itemsBasePowerLabel": "Base Power",
-	"@itemsBasePowerLabel": {
-		"description": "Label for 'Base Power' label in Item details."
-	},
-	"itemsLabel": "Items",
-	"@itemsLabel": {
-		"description": "Label for the 'Items' section in Item details."
-	},
-	"itemsAccuracyLabel": "Accuracy",
-	"@itemsAccuracyLabel": {
-		"description": "Label for 'Accuracy' in Item details."
-	},
-	"detailBaseStatsLabel": "Base Stats",
-	"@detailBaseStatsLabel": {
-		"description": "Label for the 'Base Stats' section in Pokémon details."
-	},
-	"detailEvolutionsLabel": "Evolutions",
-	"@detailEvolutionsLabel": {
-		"description": "Label for the 'Evolutions' section in Pokémon details."
-	},
-	"detailStatsLabel": "Stats",
-	"@detailStatsLabel": {
-		"description": "Label for the 'Stats' section in Pokémon details."
-	},
-	"detailBreedingEggGroupLabel": "Egg Group",
-	"@detailBreedingEggGroupLabel": {
-		"description": "Label for the 'Egg Group' section in Pokémon breeding details."
-	},
-	"detailBreedingGenderLabel": "Gender",
-	"@detailBreedingGenderLabel": {
-		"description": "Label for the 'Gender' section in Pokémon breeding details."
-	},
-	"detailBreedingHatchTimeLabel": "Hatch Time",
-	"@detailBreedingHatchTimeLabel": {
-		"description": "Label for the 'Hatch Time' section in Pokémon breeding details."
-	},
-	"detailBreedingLabel": "Breeding",
-	"@detailBreedingLabel": {
-		"description": "Label for the 'Breeding' section in Pokémon details."
-	},
-	"detailCaptureHabitatGenerationLabel": "Generation",
-	"@detailCaptureHabitatGenerationLabel": {
-		"description": "Label for the 'Generation' section in Pokémon capture habitat details."
-	},
-	"detailCaptureHabitatLabel": "Habitat",
-	"@detailCaptureHabitatLabel": {
-		"description": "Label for the 'Habitat' section in Pokémon capture details."
-	},
-	"detailCaptureLabel": "Capture",
-	"@detailCaptureLabel": {
-		"description": "Label for the 'Capture' section in Pokémon details."
-	},
-	"detailCaptureRateLabel": "Capture Rate",
-	"@detailCaptureRateLabel": {
-		"description": "Label for the 'Capture Rate' section in Pokémon details."
-	},
-	"itemsPPLabel": "PP",
-	"@itemsPPLabel": {
-		"description": "Label for 'PP' label in Item details."
-	},
-	"detailSpritesLabel": "Sprites",
-	"@detailSpritesLabel": {
-		"description": "Label for the 'Sprites' section in Pokémon details."
-	},
-	"detailSpritesNormalLabel": "Normal",
-	"@detailSpritesNormalLabel": {
-		"description": "Label for 'Normal' sprites in Pokémon details."
-	},
-	"detailSpritesShinyLabel": "Shiny",
-	"@detailSpritesShinyLabel": {
-		"description": "Label for 'Shiny' sprites in Pokémon details."
-	},
-	"detailBreedingCycles": "Cycles",
-	"detailBreedingStepsLabel": "Steps",
-	"appTitle": "YAPDex",
-	"@appTitle": {
-		"description": "Application Title"
-	},
-	"navigationItemsLabel": "Items",
-	"navigationMovesLabel": "Moves",
-	"navigationPokemonLabel": "Pokemon"
+  "pokemonTypesFighting": "Fighting",
+  "@pokemonTypesFighting": {
+    "description": "Represents the fighting type of Pokémon."
+  },
+  "pokemonTypesFire": "Fire",
+  "@pokemonTypesFire": {
+    "description": "Represents the fire type of Pokémon."
+  },
+  "pokemonTypesFlying": "Flying",
+  "@pokemonTypesFlying": {
+    "description": "Represents the flying type of Pokémon."
+  },
+  "pokemonTypesGhost": "Ghost",
+  "@pokemonTypesGhost": {
+    "description": "Represents the ghost type of Pokémon."
+  },
+  "pokemonTypesGrass": "Grass",
+  "@pokemonTypesGrass": {
+    "description": "Represents the grass type of Pokémon."
+  },
+  "pokemonTypesGround": "Ground",
+  "@pokemonTypesGround": {
+    "description": "Represents the ground type of Pokémon."
+  },
+  "pokemonTypesNormal": "Normal",
+  "@pokemonTypesNormal": {
+    "description": "Represents the normal type of Pokémon."
+  },
+  "pokemonTypesPoison": "Poison",
+  "@pokemonTypesPoison": {
+    "description": "Represents the poison type of Pokémon."
+  },
+  "pokemonTypesRock": "Rock",
+  "@pokemonTypesRock": {
+    "description": "Represents the rock type of Pokémon."
+  },
+  "pokemonTypesSteel": "Steel",
+  "@pokemonTypesSteel": {
+    "description": "Represents the steel type of Pokémon."
+  },
+  "pokemonTypesWater": "Water",
+  "@pokemonTypesWater": {
+    "description": "Represents the water type of Pokémon."
+  },
+  "pokemonTypesDark": "Dark",
+  "@pokemonTypesDark": {
+    "description": "Represents the dark type of Pokémon."
+  },
+  "pokemonTypesDragon": "Dragon",
+  "@pokemonTypesDragon": {
+    "description": "Represents the dragon type of Pokémon."
+  },
+  "pokemonTypesElectric": "Electric",
+  "@pokemonTypesElectric": {
+    "description": "Represents the electric type of Pokémon."
+  },
+  "pokemonTypesFairy": "Fairy",
+  "@pokemonTypesFairy": {
+    "description": "Represents the fairy type of Pokémon."
+  },
+  "pokemonTypesIce": "Ice",
+  "@pokemonTypesIce": {
+    "description": "Represents the ice type of Pokémon."
+  },
+  "pokemonTypesPsychic": "Psychic",
+  "@pokemonTypesPsychic": {
+    "description": "Represents the psychic type of Pokémon."
+  },
+  "detailAboutLabel": "About",
+  "@detailAboutLabel": {
+    "description": "Label for the 'About' section in Pokémon details."
+  },
+  "detailHeightLabel": "Height",
+  "@detailHeightLabel": {
+    "description": "Label for the 'Height' section in Pokémon details."
+  },
+  "pokemonTypeLabel": "Type",
+  "@pokemonTypeLabel": {
+    "description": "Label for the 'Type' section in Pokémon details."
+  },
+  "pokemonTypesBug": "Bug",
+  "@pokemonTypesBug": {
+    "description": "Represents the bug type of Pokémon."
+  },
+  "searchTitle": "Search",
+  "@searchTitle": {
+    "description": "Title for the search feature."
+  },
+  "detailMovesLabel": "Moves",
+  "@detailMovesLabel": {
+    "description": "Label for the 'Moves' section in Pokémon details."
+  },
+  "detailWeightLabel": "Weight",
+  "@detailWeightLabel": {
+    "description": "Label for the 'Weight' section in Pokémon details."
+  },
+  "sortByNumberLabel": "Number",
+  "@sortByNumberLabel": {
+    "description": "Label for sorting Pokémon by number."
+  },
+  "sortByTitle": "Sort by:",
+  "@sortByTitle": {
+    "description": "Title for the sorting feature."
+  },
+  "sortNameLabel": "Name",
+  "@sortNameLabel": {
+    "description": "Label for sorting Pokémon by name."
+  },
+  "itemsBasePowerLabel": "Base Power",
+  "@itemsBasePowerLabel": {
+    "description": "Label for 'Base Power' label in Item details."
+  },
+  "itemsLabel": "Items",
+  "@itemsLabel": {
+    "description": "Label for the 'Items' section in Item details."
+  },
+  "itemsAccuracyLabel": "Accuracy",
+  "@itemsAccuracyLabel": {
+    "description": "Label for 'Accuracy' in Item details."
+  },
+  "detailBaseStatsLabel": "Base Stats",
+  "@detailBaseStatsLabel": {
+    "description": "Label for the 'Base Stats' section in Pokémon details."
+  },
+  "detailEvolutionsLabel": "Evolutions",
+  "@detailEvolutionsLabel": {
+    "description": "Label for the 'Evolutions' section in Pokémon details."
+  },
+  "detailStatsLabel": "Stats",
+  "@detailStatsLabel": {
+    "description": "Label for the 'Stats' section in Pokémon details."
+  },
+  "detailBreedingEggGroupLabel": "Egg Group",
+  "@detailBreedingEggGroupLabel": {
+    "description": "Label for the 'Egg Group' section in Pokémon breeding details."
+  },
+  "detailBreedingGenderLabel": "Gender",
+  "@detailBreedingGenderLabel": {
+    "description": "Label for the 'Gender' section in Pokémon breeding details."
+  },
+  "detailBreedingHatchTimeLabel": "Hatch Time",
+  "@detailBreedingHatchTimeLabel": {
+    "description": "Label for the 'Hatch Time' section in Pokémon breeding details."
+  },
+  "detailBreedingLabel": "Breeding",
+  "@detailBreedingLabel": {
+    "description": "Label for the 'Breeding' section in Pokémon details."
+  },
+  "detailCaptureHabitatGenerationLabel": "Generation",
+  "@detailCaptureHabitatGenerationLabel": {
+    "description": "Label for the 'Generation' section in Pokémon capture habitat details."
+  },
+  "detailCaptureHabitatLabel": "Habitat",
+  "@detailCaptureHabitatLabel": {
+    "description": "Label for the 'Habitat' section in Pokémon capture details."
+  },
+  "detailCaptureLabel": "Capture",
+  "@detailCaptureLabel": {
+    "description": "Label for the 'Capture' section in Pokémon details."
+  },
+  "detailCaptureRateLabel": "Capture Rate",
+  "@detailCaptureRateLabel": {
+    "description": "Label for the 'Capture Rate' section in Pokémon details."
+  },
+  "itemsPPLabel": "PP",
+  "@itemsPPLabel": {
+    "description": "Label for 'PP' label in Item details."
+  },
+  "detailSpritesLabel": "Sprites",
+  "@detailSpritesLabel": {
+    "description": "Label for the 'Sprites' section in Pokémon details."
+  },
+  "detailSpritesNormalLabel": "Normal",
+  "@detailSpritesNormalLabel": {
+    "description": "Label for 'Normal' sprites in Pokémon details."
+  },
+  "detailSpritesShinyLabel": "Shiny",
+  "@detailSpritesShinyLabel": {
+    "description": "Label for 'Shiny' sprites in Pokémon details."
+  },
+  "detailBreedingCycles": "Cycles",
+  "detailBreedingStepsLabel": "Steps",
+  "appTitle": "YAPDex",
+  "@appTitle": {
+    "description": "Application Title"
+  },
+  "detailAbilitiesLabel": "Abilities",
+  "@detailAbilitiesLabel": {
+    "description": "Label for the 'Abilities' section in Pokémon details."
+  },
+  "navigationItemsLabel": "Items",
+  "@navigationItemsLabel": {
+    "description": "Label for the 'Items' section in the bottom menu bar."
+  },
+  "navigationMovesLabel": "Moves",
+  "@navigationMovesLabel": {
+    "description": "Label for the 'Moves' section in the bottom menu bar."
+  },
+  "navigationPokemonLabel": "Pokemon",
+  "@navigationPokemonLabel": {
+    "description": "Label for the 'Pokemon' section in the bottom menu bar."
+  }
 }
