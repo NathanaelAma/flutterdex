@@ -1,7 +1,7 @@
-import 'package:yapdex/core/data/repositories/authentication_repository.dart';
-import 'package:yapdex/core/guards/guard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yapdex/core/data/repositories/authentication_repository.dart';
+import 'package:yapdex/core/guards/guard.dart';
 
 class AuthenticatedGuard extends ConsumerWidget {
   final Widget child;

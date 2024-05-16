@@ -1,8 +1,8 @@
-import 'package:yapdex/core/initializer/onstart_service.dart';
-import 'package:yapdex/core/initializer/onstart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:yapdex/core/initializer/onstart_service.dart';
+import 'package:yapdex/core/initializer/onstart_widget.dart';
 
 final mockedOnStartServiceProvider = Provider<MockOnStartService>((ref) {
   return MockOnStartService();

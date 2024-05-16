@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Guard extends StatelessWidget {
+import 'package:yapdex/core/router/router.dart';
+
+class Guard extends ConsumerWidget {
   final Future<bool> canActivate;
   final Widget child;
   final String fallbackRoute;
@@ -13,7 +16,7 @@ class Guard extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return FutureBuilder(
       future: canActivate,
       builder: (_, result) {
@@ -24,15 +27,16 @@ class Guard extends StatelessWidget {
         if (canActivate) {
           return child;
         }
-        redirect(context);
+        redirect(context, ref);
         return Container();
       },
     );
   }
 
-  void redirect(BuildContext context) {
+  void redirect(BuildContext context, WidgetRef ref) {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Navigator.pushReplacementNamed(context, fallbackRoute);
+      // Navigator.pushReplacementNamed(context, fallbackRoute);
+      ref.read(goRouterProvider).pushReplacementNamed(fallbackRoute);
     });
   }
 }

@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:logger/logger.dart';
-import 'package:yapdex/core/data/repositories/authentication_repository.dart';
-import 'package:yapdex/core/initializer/onstart_widget.dart';
-import 'package:yapdex/environnements.dart';
+import 'package:yapdex/app.dart';
+import 'package:yapdex/environements.dart';
 import 'package:yapdex/firebase_options_dev.dart' as firebase_dev;
-import 'package:yapdex/router.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,34 +37,5 @@ void main() async {
   // await initializeDateFormatting('fr');
   // TODO force this from device language or fallback to english
 
-  runApp(const ProviderScope(child: MyApp()));
-}
-
-class MyApp extends ConsumerWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
-      title: 'Flutter Starter Kit',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      initialRoute: 'home',
-      builder: (context, child) => Initializer(
-        services: [
-          authRepositoryProvider.notifier,
-        ],
-        onReady: child!,
-        onLoading: const Scaffold(
-          body: Center(
-            child: CircularProgressIndicator(),
-          ),
-        ),
-      ),
-      onGenerateRoute: routes,
-    );
-  }
+  runApp(const ProviderScope(child: App()));
 }

@@ -186,7 +186,19 @@
     "description": "Application Title"
   },
   "detailAbilitiesLabel": "Abilities",
+  "@detailAbilitiesLabel": {
+    "description": "Label for the 'Abilities' section in Pokémon details."
+  },
   "navigationItemsLabel": "Items",
+  "@navigationItemsLabel": {
+    "description": "Label for the 'Items' section in the bottom menu bar."
+  },
   "navigationMovesLabel": "Moves",
-  "navigationPokemonLabel": "Pokemon"
+  "@navigationMovesLabel": {
+    "description": "Label for the 'Moves' section in the bottom menu bar."
+  },
+  "navigationPokemonLabel": "Pokemon",
+  "@navigationPokemonLabel": {
+    "description": "Label for the 'Pokemon' section in the bottom menu bar."
+  }
 }
