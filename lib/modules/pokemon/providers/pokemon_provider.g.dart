@@ -6,22 +6,47 @@ part of 'pokemon_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$pokemonRepositoryHash() => r'1720e9d29d2d2956954c26046718d851149f0cbb';
+String _$pokemonRepositoryHash() => r'9f9bbff5b32882eb896d3c76cf0ecff418a6d268';
 
 /// See also [pokemonRepository].
 @ProviderFor(pokemonRepository)
-final pokemonRepositoryProvider = Provider<PokemonRepository>.internal(
+final pokemonRepositoryProvider =
+    AutoDisposeProvider<PokemonRepository>.internal(
   pokemonRepository,
   name: r'pokemonRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$pokemonRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[dioProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    dioProvider,
+    ...?dioProvider.allTransitiveDependencies
+  },
 );
 
-typedef PokemonRepositoryRef = ProviderRef<PokemonRepository>;
-String _$pokemonListHash() => r'649b748657198b7f614ba233b55395528a666337';
+typedef PokemonRepositoryRef = AutoDisposeProviderRef<PokemonRepository>;
+String _$pokemonSpeciesRepositoryHash() =>
+    r'7523d11c769ede9c065d08a4527f73b9f338f612';
+
+/// See also [pokemonSpeciesRepository].
+@ProviderFor(pokemonSpeciesRepository)
+final pokemonSpeciesRepositoryProvider =
+    AutoDisposeProvider<PokemonSpeciesRepository>.internal(
+  pokemonSpeciesRepository,
+  name: r'pokemonSpeciesRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$pokemonSpeciesRepositoryHash,
+  dependencies: <ProviderOrFamily>[dioProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    dioProvider,
+    ...?dioProvider.allTransitiveDependencies
+  },
+);
+
+typedef PokemonSpeciesRepositoryRef
+    = AutoDisposeProviderRef<PokemonSpeciesRepository>;
+String _$pokemonListHash() => r'71de51a1353fafa95d2bb12509bc837aecc22150';
 
 /// See also [PokemonList].
 @ProviderFor(PokemonList)
@@ -31,12 +56,15 @@ final pokemonListProvider =
   name: r'pokemonListProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : _$pokemonListHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[pokemonRepositoryProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    pokemonRepositoryProvider,
+    ...?pokemonRepositoryProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$PokemonList = AsyncNotifier<List<Pokemon>>;
-String _$currentPokemonHash() => r'2bceed2e5dd8acf66b14ecc4a1c7a3948c9ae0b3';
+String _$currentPokemonHash() => r'11d1ce2d0445205444cb54976e055f05594d7c4c';
 
 /// See also [CurrentPokemon].
 @ProviderFor(CurrentPokemon)
@@ -47,10 +75,33 @@ final currentPokemonProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$currentPokemonHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: <ProviderOrFamily>[pokemonRepositoryProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    pokemonRepositoryProvider,
+    ...?pokemonRepositoryProvider.allTransitiveDependencies
+  },
 );
 
 typedef _$CurrentPokemon = Notifier<Pokemon>;
+String _$currentPokemonSpeciesHash() =>
+    r'0af00f9bfe7ab22dcf281a31b73345b5344f5fd1';
+
+/// See also [CurrentPokemonSpecies].
+@ProviderFor(CurrentPokemonSpecies)
+final currentPokemonSpeciesProvider =
+    NotifierProvider<CurrentPokemonSpecies, PokemonSpecies>.internal(
+  CurrentPokemonSpecies.new,
+  name: r'currentPokemonSpeciesProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentPokemonSpeciesHash,
+  dependencies: <ProviderOrFamily>[pokemonSpeciesRepositoryProvider],
+  allTransitiveDependencies: <ProviderOrFamily>{
+    pokemonSpeciesRepositoryProvider,
+    ...?pokemonSpeciesRepositoryProvider.allTransitiveDependencies
+  },
+);
+
+typedef _$CurrentPokemonSpecies = Notifier<PokemonSpecies>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
