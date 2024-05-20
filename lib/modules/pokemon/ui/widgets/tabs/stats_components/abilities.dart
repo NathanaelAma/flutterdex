@@ -13,19 +13,38 @@ class AbilitiesSection extends ConsumerWidget {
     final Pokemon pokemon = ref.watch(currentPokemonProvider);
     final String type = pokemon.types.first.type.name;
 
-    // return Text(pokemon.abilities.toString());
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Center(
-          child: Text(AppLocalizations.of(context)!.detailAbilitiesLabel,
-              style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                    color: PokemonTypeColors.typeColors[type],
-                  )),
+          child: Text(
+            AppLocalizations.of(context)!.detailAbilitiesLabel,
+            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                  color: PokemonTypeColors.typeColors[type],
+                ),
+          ),
         ),
         const SizedBox(height: 10),
         ...pokemon.abilities.map((ability) {
-          return Text(ability.ability.name,
-              style: Theme.of(context).textTheme.bodySmall);
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                ability.ability.name,
+                style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      color: PokemonTypeColors.typeColors[type],
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc nec ultricies. ",
+                style: Theme.of(context).textTheme.bodySmall,
+              ),
+              const SizedBox(height: 10),
+              Divider(color: Colors.grey[300]),
+            ],
+          );
         }),
       ],
     );

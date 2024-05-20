@@ -1,9 +1,7 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-
 import 'package:yapdex/core/data/models/pokemon/pokemon.dart';
 import 'package:yapdex/modules/common/config/colors.dart';
 import 'package:yapdex/modules/pokemon/providers/pokemon_provider.dart';
@@ -37,57 +35,35 @@ class StatbarsSection extends ConsumerWidget {
     final List<Widget> statBars = statMap.entries.map((stat) {
       final percentValue = stat.value / 255;
       final shortenedName = nameMappings[stat.key] ?? stat.key;
-      return Row(
-        children: [
-          Text(shortenedName.toUpperCase(),
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color: PokemonTypeColors.typeColors[type])),
-          const SizedBox(width: 10),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
-            child: LinearPercentIndicator(
-              width: 200,
-              lineHeight: 20.0,
-              percent: percentValue,
-              backgroundColor: Colors.grey,
-              progressColor: PokemonTypeColors.typeColors[type],
-              barRadius: const Radius.circular(10),
-            ),
-          ),
-        ],
-      );
-    }).toList();
-
-    final List<Widget> statBars2 = statMap.entries.map((stat) {
-      final percentValue = stat.value / 255;
-      final shortenedName = nameMappings[stat.key] ?? stat.key;
-
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        padding: const EdgeInsets.symmetric(vertical: 4.0),
         child: Row(
           children: [
-            Text(shortenedName.toUpperCase(),
+            SizedBox(
+              width: 60,
+              child: Text(
+                shortenedName.toUpperCase(),
                 style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: PokemonTypeColors.typeColors[type])),
-            const SizedBox(width: 10),
-            Text(stat.value.toString(),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: PokemonTypeColors.typeColors[type])),
-            const SizedBox(width: 10),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                  color: PokemonTypeColors.typeColors[type],
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 40,
+              child: Text(
+                stat.value.toString().padLeft(3, '0'),
+                style: TextStyle(color: Colors.grey[600], fontSize: 14),
+              ),
+            ),
             Expanded(
               child: LinearPercentIndicator(
-                width: double.infinity,
-                lineHeight: 20.0,
+                lineHeight: 10.0,
                 percent: percentValue,
-                backgroundColor: Colors.grey,
+                backgroundColor: Colors.grey[300],
                 progressColor: PokemonTypeColors.typeColors[type],
-                barRadius: const Radius.circular(10),
+                barRadius: const Radius.circular(5),
               ),
             ),
           ],
@@ -95,8 +71,11 @@ class StatbarsSection extends ConsumerWidget {
       );
     }).toList();
 
-    return Column(
-      children: statBars,
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        children: statBars,
+      ),
     );
   }
 }
