@@ -1,7 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:cached_network_image/cached_network_image.dart';
-
 import 'package:yapdex/core/data/models/pokemon/pokemon.dart';
 import 'package:yapdex/core/l10n/l10n.dart';
 import 'package:yapdex/modules/common/config/colors.dart';
@@ -32,7 +31,7 @@ class SpritesSection extends ConsumerWidget {
             children: [
               _buildSpriteColumn(
                 context,
-                label: 'Normal',
+                label: AppLocalizations.of(context)!.detailSpritesLabel,
                 pokemon: pokemon,
                 shiny: false,
                 type: type,
@@ -40,7 +39,7 @@ class SpritesSection extends ConsumerWidget {
               ),
               _buildSpriteColumn(
                 context,
-                label: 'Shiny',
+                label: AppLocalizations.of(context)!.detailSpritesShinyLabel,
                 pokemon: pokemon,
                 shiny: true,
                 type: type,

@@ -11,7 +11,9 @@ class StatsTab extends StatelessWidget {
 
   static const sections = [
     StatbarsSection(),
-    WeaknessesSection(),
+    WeaknessesSection(
+      popup: false,
+    ),
     AbilitiesSection(),
     BreedingSection(),
     CaptureSection(),
