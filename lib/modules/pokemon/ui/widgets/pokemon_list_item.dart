@@ -29,6 +29,9 @@ class PokemonListItem extends ConsumerWidget {
               ref
                   .read(currentPokemonProvider.notifier)
                   .setCurrentPokemon(pokemon),
+              ref
+                  .read(currentPokemonSpeciesProvider.notifier)
+                  .setCurrentPokemonSpeciesById(pokemon.id),
               ref.read(goRouterProvider).push(Uri(
                     path: '/pokemon/${pokemon.id}',
                   ).toString()),

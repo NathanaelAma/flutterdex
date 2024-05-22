@@ -200,5 +200,9 @@
   "navigationPokemonLabel": "Pokemon",
   "@navigationPokemonLabel": {
     "description": "Label for the 'Pokemon' section in the bottom menu bar."
+  },
+  "detailWeaknessesLabel": "Weaknesses",
+  "@detailWeaknessesLabel": {
+    "description": "Label for the 'Weaknesses' section in Pokémon details."
   }
 }

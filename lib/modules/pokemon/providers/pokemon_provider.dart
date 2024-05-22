@@ -1,19 +1,30 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yapdex/core/data/models/pokemon/pokemon.dart';
+import 'package:yapdex/core/data/models/pokemon/species/pokemon_species.dart';
 import 'package:yapdex/core/data/models/utility/common.dart';
 import 'package:yapdex/core/data/provider/dio_provider.dart';
+import 'package:yapdex/core/data/repositories/pokemon/pokemon_species_repository.dart';
 import 'package:yapdex/core/data/repositories/pokemon_repository.dart';
+import 'package:yapdex/core/initializer/onstart_service.dart';
 
 part 'pokemon_provider.g.dart';
 
-@Riverpod(keepAlive: true)
-PokemonRepository pokemonRepository(PokemonRepositoryRef ref) =>
-    PokemonRepository(
-     dio: ref.watch(dioProvider),
+@Riverpod(keepAlive: false, dependencies: [dio])
+PokemonRepository pokemonRepository(PokemonRepositoryRef ref) {
+  return PokemonRepository(
+    dio: ref.watch(dioProvider),
+  );
+}
+
+@Riverpod(dependencies: [dio])
+PokemonSpeciesRepository pokemonSpeciesRepository(
+        PokemonSpeciesRepositoryRef ref) =>
+    PokemonSpeciesRepository(
+      dio: ref.watch(dioProvider),
     );
 
-@Riverpod(keepAlive: true)
-class PokemonList extends _$PokemonList {
+@Riverpod(keepAlive: true, dependencies: [pokemonRepository])
+class PokemonList extends _$PokemonList implements OnStartService {
   List<Pokemon> _pokemonList = [];
 
   void getPokemonList() {
@@ -29,9 +40,14 @@ class PokemonList extends _$PokemonList {
   Future<List<Pokemon>> build() async {
     return _pokemonList;
   }
+
+  @override
+  Future<void> init() async {
+    getPokemonList();
+  }
 }
 
-@Riverpod(keepAlive: true)
+@Riverpod(keepAlive: true, dependencies: [pokemonRepository])
 class CurrentPokemon extends _$CurrentPokemon {
   Pokemon _currentPokemon = const Pokemon(
     id: 0,
@@ -46,8 +62,6 @@ class CurrentPokemon extends _$CurrentPokemon {
   void setCurrentPokemon(Pokemon pokemon) {
     _currentPokemon = pokemon;
     state = pokemon;
-
-    
   }
 
   void setCurrentPokemonById(int id) {
@@ -61,5 +75,58 @@ class CurrentPokemon extends _$CurrentPokemon {
   @override
   Pokemon build() {
     return _currentPokemon;
+  }
+}
+
+@Riverpod(keepAlive: true, dependencies: [pokemonSpeciesRepository])
+class CurrentPokemonSpecies extends _$CurrentPokemonSpecies {
+  final PokemonSpecies _currentPokemonSpecies = const PokemonSpecies(
+    id: 0,
+    name: '',
+    names: [],
+    gender_rate: 0,
+    capture_rate: 0,
+    is_baby: false,
+    is_legendary: false,
+    is_mythical: false,
+    hatch_counter: 0,
+    habitat: NamedAPIResource(name: '', url: ''),
+    egg_groups: [],
+    generation: NamedAPIResource(name: '', url: ''),
+    flavor_text_entries: [],
+    genera: [],
+    evolution_chain: APIResource(url: ""),
+  );
+
+  void setCurrentPokemonSpeciesById(int id) {
+    final pokemonSpeciesRepository = ref.read(pokemonSpeciesRepositoryProvider);
+    pokemonSpeciesRepository
+        .getPokemonSpeciesById(id: id)
+        .then((pokemonSpecies) {
+      state = pokemonSpecies;
+    });
+  }
+
+  void setCurrentPokemonSpeciesByName(String name) {
+    final pokemonSpeciesRepository = ref.read(pokemonSpeciesRepositoryProvider);
+    pokemonSpeciesRepository
+        .getPokemonSpeciesByName(name: name)
+        .then((pokemonSpecies) {
+      state = pokemonSpecies;
+    });
+  }
+
+  void setCurrentPokemonSpeciesByUrl(String url) {
+    final pokemonSpeciesRepository = ref.read(pokemonSpeciesRepositoryProvider);
+    pokemonSpeciesRepository
+        .getPokemonSpeciesByUrl(url: url)
+        .then((pokemonSpecies) {
+      state = pokemonSpecies;
+    });
+  }
+
+  @override
+  PokemonSpecies build() {
+    return _currentPokemonSpecies;
   }
 }

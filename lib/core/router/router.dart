@@ -3,15 +3,18 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yapdex/core/data/repositories/authentication_repository.dart';
 import 'package:yapdex/core/initializer/onstart_widget.dart';
+import 'package:yapdex/core/widgets/page_not_found.dart';
 import 'package:yapdex/core/widgets/scaffold.dart';
+import 'package:yapdex/core/widgets/splashscreen.dart';
 import 'package:yapdex/modules/authentication/ui/signin_page.dart';
+import 'package:yapdex/modules/pokemon/ui/pokemon_details_screen.dart';
 import 'package:yapdex/modules/pokemon/ui/pokemon_list_screen.dart';
 
-enum AppRoute { pokemon, moves, items, pokemonDetail, moveDetail, itemDetail }
+enum AppRoute { pokemon, moves, items, pokemondetail, movedetail, itemdetail }
 
 enum AuthRoute { signin, signup }
 
-enum ServicesRoute { initializer }
+enum ServicesRoute { initializer, splashscreen }
 
 final _rootNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'rootNavigator');
@@ -35,40 +38,101 @@ final goRouterProvider = Provider<GoRouter>((ref) {
             path: "/${AppRoute.pokemon.name}",
             name: AppRoute.pokemon.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) => NoTransitionPage(
-                key: state.pageKey, child: const PokemonListScreen()),
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: const PokemonListScreen(),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                // Change the opacity of the screen using a Curve based on the the animation's
+                // value
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOutCirc)
+                      .animate(animation),
+                  child: child,
+                );
+              },
+            ),
           ),
           GoRoute(
             path: "/${AppRoute.moves.name}",
             name: AppRoute.moves.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) => NoTransitionPage(
-                key: state.pageKey, child: const Text('Moves')),
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: const Text('Moves'),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                // Change the opacity of the screen using a Curve based on the the animation's
+                // value
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOutCirc)
+                      .animate(animation),
+                  child: child,
+                );
+              },
+            ),
           ),
           GoRoute(
             path: "/${AppRoute.items.name}",
             name: AppRoute.items.name,
             parentNavigatorKey: _shellNavigatorKey,
-            pageBuilder: (context, state) => NoTransitionPage(
-                key: state.pageKey, child: const Text('Items')),
+            pageBuilder: (context, state) => CustomTransitionPage(
+              key: state.pageKey,
+              child: const Text('Items'),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                // Change the opacity of the screen using a Curve based on the the animation's
+                // value
+                return FadeTransition(
+                  opacity: CurveTween(curve: Curves.easeInOutCirc)
+                      .animate(animation),
+                  child: child,
+                );
+              },
+            ),
           ),
         ],
       ),
       GoRoute(
-          path: "/${AuthRoute.signin.name}",
-          parentNavigatorKey: _rootNavigatorKey,
-          name: AuthRoute.signin.name,
-          pageBuilder: (context, state) =>
-              const NoTransitionPage(child: SigninPage())),
+          path: '/${AppRoute.pokemon.name}/:id',
+          name: AppRoute.pokemondetail.name,
+          pageBuilder: (context, state) {
+            return NoTransitionPage(
+              key: state.pageKey,
+              child: const PokemonDetailScreen(),
+            );
+          }),
       GoRoute(
-          path: "/${ServicesRoute.initializer.name}",
-          parentNavigatorKey: _rootNavigatorKey,
-          pageBuilder: (context, state) => NoTransitionPage(
-              child: Initializer(
-                  services: [authRepositoryProvider.notifier],
-                  onReady: const SigninPage(),
-                  onLoading: const CircularProgressIndicator())))
+        path: "/${AuthRoute.signin.name}",
+        parentNavigatorKey: _rootNavigatorKey,
+        name: AuthRoute.signin.name,
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: SigninPage(),
+        ),
+      ),
+      GoRoute(
+        path: "/${ServicesRoute.initializer.name}",
+        parentNavigatorKey: _rootNavigatorKey,
+        pageBuilder: (context, state) => NoTransitionPage(
+          child: Initializer(
+            services: [authRepositoryProvider.notifier],
+            onReady: const SigninPage(),
+            onLoading: const CircularProgressIndicator(),
+          ),
+        ),
+      ),
+      GoRoute(
+        path: "/",
+        name: ServicesRoute.splashscreen.name,
+        pageBuilder: (context, state) {
+          return NoTransitionPage(
+            key: state.pageKey,
+            child: SplashScreen(),
+          );
+        },
+      ),
     ],
+    errorBuilder: (context, state) => const PageNotFound(),
     observers: [],
   );
 });

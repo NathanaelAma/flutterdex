@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yapdex/core/initializer/onstart_widget.dart';
 import 'package:yapdex/core/l10n/l10n.dart';
 import 'package:yapdex/core/router/router.dart';
+import 'package:yapdex/core/widgets/splashscreen.dart';
 import 'package:yapdex/modules/pokemon/providers/pokemon_provider.dart';
 
 class App extends ConsumerWidget {
@@ -22,17 +24,10 @@ class App extends ConsumerWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // builder: (context, child) => Initializer(
-      //   services: [
-      //     authRepositoryProvider.notifier,
-      //   ],
-      //   onReady: child!,
-      //   onLoading: const Scaffold(
-      //     body: Center(
-      //       child: CircularProgressIndicator(),
-      //     ),
-      //   ),
-      // ),
+      builder: (context, child) => Initializer(
+        onReady: child!,
+        onLoading: SplashScreen(),
+      ),
       // routerConfig: router,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,

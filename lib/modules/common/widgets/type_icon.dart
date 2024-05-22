@@ -5,6 +5,7 @@ import 'package:yapdex/modules/common/config/colors.dart';
 class TypeIcon extends StatelessWidget {
   final String type;
   final bool iconOnly;
+
   const TypeIcon({super.key, required this.type, required this.iconOnly});
 
   @override
@@ -31,8 +32,8 @@ class TypeIcon extends StatelessWidget {
                   height: 20,
                 )
               : Container(
-                constraints: const BoxConstraints(maxWidth: 150),
-                child: Row(
+                  constraints: const BoxConstraints(maxWidth: 150),
+                  child: Row(
                     children: [
                       SvgPicture.asset(
                         'assets/svg/$type.svg',
@@ -51,7 +52,7 @@ class TypeIcon extends StatelessWidget {
                       ),
                     ],
                   ),
-              )),
+                )),
     );
   }
 }
