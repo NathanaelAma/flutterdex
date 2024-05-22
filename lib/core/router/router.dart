@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:yapdex/core/data/repositories/authentication_repository.dart';
 import 'package:yapdex/core/initializer/onstart_widget.dart';
+import 'package:yapdex/core/widgets/page_not_found.dart';
 import 'package:yapdex/core/widgets/scaffold.dart';
 import 'package:yapdex/core/widgets/splashscreen.dart';
 import 'package:yapdex/modules/authentication/ui/signin_page.dart';
@@ -131,6 +132,7 @@ final goRouterProvider = Provider<GoRouter>((ref) {
         },
       ),
     ],
+    errorBuilder: (context, state) => const PageNotFound(),
     observers: [],
   );
 });
