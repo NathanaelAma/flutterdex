@@ -13,8 +13,6 @@ class App extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final router = ref.watch(goRouterProvider);
-    //TODO: create splash screen to hide initial loading
-    Future(() {ref.read(pokemonListProvider.notifier).getPokemonList();});
 
     return MaterialApp.router(
       title: "YAPDex",
@@ -26,6 +24,11 @@ class App extends ConsumerWidget {
       ),
       builder: (context, child) => Initializer(
         onReady: child!,
+        services: [
+          pokemonListProvider.notifier,
+          currentPokemonProvider.notifier,
+          currentPokemonSpeciesProvider.notifier,
+        ],
         onLoading: SplashScreen(),
       ),
       // routerConfig: router,

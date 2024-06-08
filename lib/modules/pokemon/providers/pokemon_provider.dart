@@ -48,7 +48,7 @@ class PokemonList extends _$PokemonList implements OnStartService {
 }
 
 @Riverpod(keepAlive: true, dependencies: [pokemonRepository])
-class CurrentPokemon extends _$CurrentPokemon {
+class CurrentPokemon extends _$CurrentPokemon implements OnStartService {
   Pokemon _currentPokemon = const Pokemon(
     id: 0,
     name: '',
@@ -64,7 +64,7 @@ class CurrentPokemon extends _$CurrentPokemon {
     state = pokemon;
   }
 
-  void setCurrentPokemonById(int id) {
+  void setCurrentPokemonById({required int id}) {
     final pokemonRepository = ref.read(pokemonRepositoryProvider);
     pokemonRepository.getPokemonById(id: id).then((pokemon) {
       _currentPokemon = pokemon;
@@ -76,10 +76,16 @@ class CurrentPokemon extends _$CurrentPokemon {
   Pokemon build() {
     return _currentPokemon;
   }
+
+  @override
+  Future<void> init() async {
+    setCurrentPokemonById(id: 1);
+  }
 }
 
 @Riverpod(keepAlive: true, dependencies: [pokemonSpeciesRepository])
-class CurrentPokemonSpecies extends _$CurrentPokemonSpecies {
+class CurrentPokemonSpecies extends _$CurrentPokemonSpecies
+    implements OnStartService {
   final PokemonSpecies _currentPokemonSpecies = const PokemonSpecies(
     id: 0,
     name: '',
@@ -128,5 +134,10 @@ class CurrentPokemonSpecies extends _$CurrentPokemonSpecies {
   @override
   PokemonSpecies build() {
     return _currentPokemonSpecies;
+  }
+
+  @override
+  Future<void> init() async {
+    setCurrentPokemonSpeciesById(1);
   }
 }
