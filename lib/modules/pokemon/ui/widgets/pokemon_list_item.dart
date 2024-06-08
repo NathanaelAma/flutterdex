@@ -14,39 +14,45 @@ class PokemonListItem extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return ListTile(
-        leading: Hero(
-          tag: pokemon.id,
-          child: CachedNetworkImage(
-            imageUrl: ref.read(artWorkUrlProvider(pokemon.id)),
-            placeholder: (context, url) => const CircularProgressIndicator(),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),
+      leading: Hero(
+        tag: pokemon.id,
+        child: CachedNetworkImage(
+          imageUrl: ref.read(artWorkUrlProvider(pokemon.id)),
+          placeholder: (context, url) => const CircularProgressIndicator(),
+          errorWidget: (context, url, error) => const Icon(Icons.error),
         ),
-        title: Text(pokemon.name.characters.first.toUpperCase() +
-            pokemon.name.substring(1)),
-        subtitle: Text('#${pokemon.id.toString().padLeft(3, '0')}'),
-        onTap: () => {
-              ref
-                  .read(currentPokemonProvider.notifier)
-                  .setCurrentPokemon(pokemon),
-              ref
-                  .read(currentPokemonSpeciesProvider.notifier)
-                  .setCurrentPokemonSpeciesById(pokemon.id),
-              ref.read(goRouterProvider).push(Uri(
-                    path: '/pokemon/${pokemon.id}',
-                  ).toString()),
-            },
-        trailing: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: pokemon.types
-              .map((type) => Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: TypeIcon(
-                      type: type.type.name,
-                      iconOnly: true,
-                    ),
-                  ))
-              .toList(),
-        ));
+      ),
+      title: Text(
+        pokemon.name.characters.first.toUpperCase() + pokemon.name.substring(1),
+      ),
+      subtitle: Text(
+        '#${pokemon.id.toString().padLeft(3, '0')}',
+      ),
+      onTap: () => {
+        ref.read(currentPokemonProvider.notifier).setCurrentPokemon(pokemon),
+        ref
+            .read(currentPokemonSpeciesProvider.notifier)
+            .setCurrentPokemonSpeciesById(pokemon.id),
+        ref.read(goRouterProvider).push(
+              Uri(
+                path: '/pokemon/${pokemon.id}',
+              ).toString(),
+            ),
+      },
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: pokemon.types
+            .map(
+              (type) => Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: TypeIcon(
+                  type: type.type.name,
+                  iconOnly: true,
+                ),
+              ),
+            )
+            .toList(),
+      ),
+    );
   }
 }

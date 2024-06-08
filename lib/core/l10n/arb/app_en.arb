@@ -1,4 +1,5 @@
 {
+  "@@locale": "en",
   "pokemonTypesFighting": "Fighting",
   "@pokemonTypesFighting": {
     "description": "Represents the fighting type of Pokémon."
