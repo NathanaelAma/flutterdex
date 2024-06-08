@@ -31,6 +31,7 @@ class _InitializerState extends ConsumerState<Initializer> {
         await serviceInstance.init();
         onStartHandler.register(serviceInstance); // useless now
       }
+      onStartHandler.printDebugState();
       onStartHandler.onEnded();
     });
   }
