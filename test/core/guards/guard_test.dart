@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yapdex/core/guards/guard.dart';
 
 void main() {
@@ -23,6 +24,24 @@ void main() {
         throw 'error page not found';
     }
   }
+  final GoRouter _router = GoRouter(
+    routes: [
+      GoRoute(
+        path: '/page1',
+        builder: (context, state) {
+          return Guard(
+            canActivate: condition!,
+            fallbackRoute: '/page2',
+            child: const FakePage(msg: 'page1'),
+          );
+        },
+      ),
+      GoRoute(
+        path: '/page2',
+        builder: (context, state) => const FakePage(msg: 'page2'),
+      ),
+    ],
+  );
 
   testWidgets('guard condition returns true => pass through OK',
       (WidgetTester tester) async {
@@ -40,7 +59,11 @@ void main() {
       (WidgetTester tester) async {
     condition = Future.value(false);
 
-    final app = MaterialApp(initialRoute: 'page1', onGenerateRoute: testRoutes);
+    final app = MaterialApp.router(
+      routerDelegate: _router.routerDelegate,
+      routeInformationParser: _router.routeInformationParser,
+      routeInformationProvider: _router.routeInformationProvider,
+    );
     await tester.pumpWidget(app);
     // ignore: avoid_redundant_argument_values
     await tester.pumpAndSettle(const Duration(milliseconds: 100));
