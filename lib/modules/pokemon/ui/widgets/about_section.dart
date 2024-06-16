@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:yapdex/core/utils/utils.dart';
 import 'package:yapdex/modules/common/widgets/type_icon.dart';
 
 import 'package:yapdex/modules/pokemon/providers/pokemon_provider.dart';
@@ -36,13 +37,7 @@ class AboutSection extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                          description
-                              .replaceAll('\f', '\n')
-                              .replaceAll('\u00ad\n', '')
-                              .replaceAll('\u00ad', '')
-                              .replaceAll(' -\n', ' - ')
-                              .replaceAll('-\n', '-')
-                              .replaceAll('\n', ' '),
+                          formatDescription(description),
                           textAlign: TextAlign.start,
                           style: const TextStyle(fontSize: 16)),
                     ),

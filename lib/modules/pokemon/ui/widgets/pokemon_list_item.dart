@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:yapdex/core/data/models/pokemon/pokemon.dart';
 import 'package:yapdex/core/router/router.dart';
+import 'package:yapdex/core/utils/utils.dart';
 import 'package:yapdex/modules/common/providers/artwork_provider.dart';
 import 'package:yapdex/modules/common/widgets/type_icon.dart';
 import 'package:yapdex/modules/pokemon/providers/pokemon_provider.dart';
@@ -23,11 +24,12 @@ class PokemonListItem extends ConsumerWidget {
         ),
       ),
       title: Text(
-        pokemon.name.characters.first.toUpperCase() + pokemon.name.substring(1),
+        upperCasePokemonName(pokemon.name),
       ),
       subtitle: Text(
-        '#${pokemon.id.toString().padLeft(3, '0')}',
+        generatePokemonNumber(pokemon.id),
       ),
+      //TDOD: change to passing pokemon id to detail screen
       onTap: () => {
         ref.read(currentPokemonProvider.notifier).setCurrentPokemon(pokemon),
         ref

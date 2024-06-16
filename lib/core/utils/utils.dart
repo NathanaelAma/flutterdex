@@ -10,6 +10,10 @@ String upperCasePokemonName(String pokemonName) {
   return pokemonName.characters.first.toUpperCase() + pokemonName.substring(1);
 }
 
+String generatePokemonNumber(int pokemonId) {
+  return '#${pokemonId.toString().padLeft(3, '0')}';
+}
+
 /// Formats the given [description] by replacing certain characters and returns the modified string.
 String formatDescription(String description) {
   return description
