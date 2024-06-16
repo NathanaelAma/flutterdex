@@ -1,10 +1,8 @@
-import 'dart:convert';
-import 'dart:js_interop';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:yapdex/core/data/models/pokemon/species/pokemon_species.dart';
 
+/// Repository class for fetching Pokemon species data.
 class PokemonSpeciesRepository {
   PokemonSpeciesRepository({
     required this.dio,
@@ -12,6 +10,10 @@ class PokemonSpeciesRepository {
 
   final Dio dio;
 
+  /// Fetches Pokemon species data by ID.
+  ///
+  /// Returns a [Future] that resolves to a [PokemonSpecies] object.
+  /// Throws an exception if the request fails.
   Future<PokemonSpecies> getPokemonSpeciesById({required int id}) async {
     try {
       final url = Uri(
@@ -23,16 +25,19 @@ class PokemonSpeciesRepository {
 
       final PokemonSpecies pokemonSpecies =
           PokemonSpecies.fromJson(response.data!);
-      debugPrint(pokemonSpecies.runtimeType.toString());
       return pokemonSpecies;
     } catch (exception) {
       if (kDebugMode) {
-        print("exception: $exception");
+        debugPrint("exception: $exception");
       }
       rethrow;
     }
   }
 
+  /// Fetches Pokemon species data by name.
+  ///
+  /// Returns a [Future] that resolves to a [PokemonSpecies] object.
+  /// Throws an exception if the request fails.
   Future<PokemonSpecies> getPokemonSpeciesByName({required String name}) async {
     try {
       final url = Uri(
@@ -52,6 +57,10 @@ class PokemonSpeciesRepository {
     }
   }
 
+  /// Fetches Pokemon species data by URL.
+  ///
+  /// Returns a [Future] that resolves to a [PokemonSpecies] object.
+  /// Throws an exception if the request fails.
   Future<PokemonSpecies> getPokemonSpeciesByUrl({required String url}) async {
     try {
       final response = await dio.get(url);

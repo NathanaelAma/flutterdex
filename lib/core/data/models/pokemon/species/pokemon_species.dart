@@ -16,7 +16,9 @@ PokemonSpecies pokemonSpeciesFromJson(String str) =>
 String pokemonSpeciesToJson(PokemonSpecies data) => json.encode(data.toJson());
 
 @freezed
+/// Represents a Pokemon species.
 class PokemonSpecies with _$PokemonSpecies {
+  /// Creates a PokemonSpecies instance.
   const factory PokemonSpecies({
     required int capture_rate,
     required List<NamedAPIResource> egg_groups,
@@ -35,6 +37,7 @@ class PokemonSpecies with _$PokemonSpecies {
     required List<Name> names,
   }) = _PokemonSpecies;
 
+  /// Creates a PokemonSpecies instance from a JSON map.
   factory PokemonSpecies.fromJson(Map<String, dynamic> json) =>
       _$PokemonSpeciesFromJson(json);
 }
