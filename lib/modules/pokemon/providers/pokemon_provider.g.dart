@@ -64,7 +64,7 @@ final pokemonListProvider =
 );
 
 typedef _$PokemonList = AsyncNotifier<List<Pokemon>>;
-String _$currentPokemonHash() => r'11d1ce2d0445205444cb54976e055f05594d7c4c';
+String _$currentPokemonHash() => r'843c724d8e02294afbd374b8be5e3358a57229d4';
 
 /// See also [CurrentPokemon].
 @ProviderFor(CurrentPokemon)

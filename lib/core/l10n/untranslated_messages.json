@@ -1,0 +1,19 @@
+{
+  "fr": [
+    "appTitle",
+    "detailAbilitiesLabel",
+    "navigationItemsLabel",
+    "navigationMovesLabel",
+    "navigationPokemonLabel",
+    "detailWeaknessesLabel"
+  ],
+
+  "it": [
+    "appTitle",
+    "detailAbilitiesLabel",
+    "navigationItemsLabel",
+    "navigationMovesLabel",
+    "navigationPokemonLabel",
+    "detailWeaknessesLabel"
+  ]
+}

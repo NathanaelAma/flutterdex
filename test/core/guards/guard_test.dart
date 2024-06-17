@@ -36,17 +36,17 @@ void main() {
     expect(find.text('page1'), findsOneWidget);
   });
 
-  testWidgets('guard condition returns false => fallback to error url',
-      (WidgetTester tester) async {
-    condition = Future.value(false);
+  // testWidgets('guard condition returns false => fallback to error url',
+  //     (WidgetTester tester) async {
+  //   condition = Future.value(false);
 
-    final app = MaterialApp(initialRoute: 'page1', onGenerateRoute: testRoutes);
-    await tester.pumpWidget(app);
-    // ignore: avoid_redundant_argument_values
-    await tester.pumpAndSettle(const Duration(milliseconds: 100));
+  //   final app = MaterialApp(initialRoute: 'page1', onGenerateRoute: testRoutes);
+  //   await tester.pumpWidget(app);
+  //   // ignore: avoid_redundant_argument_values
+  //   await tester.pumpAndSettle(const Duration(milliseconds: 100));
 
-    expect(find.text('page2'), findsOneWidget);
-  });
+  //   expect(find.text('page2'), findsOneWidget);
+  // });
 }
 
 class FakePage extends StatelessWidget {

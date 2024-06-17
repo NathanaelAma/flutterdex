@@ -42,8 +42,8 @@ class _ScaffoldWithBottomNavBarState
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.white,
-        showSelectedLabels: false,
+        selectedItemColor: Colors.blue,
+        showSelectedLabels: true,
         showUnselectedLabels: true,
         currentIndex: _selectedIndex,
         items: [
