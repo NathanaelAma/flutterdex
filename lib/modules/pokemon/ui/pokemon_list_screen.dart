@@ -20,14 +20,19 @@ class _PokemonListScreenState extends ConsumerState<PokemonListScreen> {
   Widget build(BuildContext context) {
     final pokemonListAsync = ref.watch(pokemonListProvider);
     return pokemonListAsync.when(
-        data: (pokemons) => ListView.separated(
-              itemCount: pokemons.length,
-              separatorBuilder: (context, index) => const Divider(),
-              itemBuilder: (context, index) {
-                return PokemonListItem(pokemon: pokemons[index]);
-              },
-            ),
-        error: (error, stack) => Center(child: Text('error: $error')),
-        loading: () => const Center(child: CircularProgressIndicator()));
+      data: (pokemons) => ListView.separated(
+        itemCount: pokemons.length,
+        separatorBuilder: (context, index) => const Divider(),
+        itemBuilder: (context, index) {
+          return PokemonListItem(pokemon: pokemons[index]);
+        },
+      ),
+      error: (error, stack) => Center(
+        child: Text('error: $error'),
+      ),
+      loading: () => const Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 }

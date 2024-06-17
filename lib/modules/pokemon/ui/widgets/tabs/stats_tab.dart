@@ -22,18 +22,14 @@ class StatsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flex(direction: Axis.vertical, children: [
-      Expanded(
-        child: ListView.separated(
-          itemCount: sections.length,
-          itemBuilder: (context, index) {
-            return sections[index];
-          },
-          separatorBuilder: (context, index) {
-            return const SizedBox(height: 20);
-          },
-        ),
-      ),
-    ]);
+    return ListView.separated(
+      itemCount: sections.length,
+      itemBuilder: (context, index) {
+        return sections[index];
+      },
+      separatorBuilder: (context, index) {
+        return const SizedBox(height: 20);
+      },
+    );
   }
 }
