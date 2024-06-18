@@ -37,6 +37,7 @@ class Pokemon with _$Pokemon {
     required PokemonStatList stats,
     required PokemonTypeList types,
     required int weight,
+    required int height,
   }) = _Pokemon;
 
   factory Pokemon.fromJson(Map<String, dynamic> json) =>
