@@ -24,35 +24,36 @@ class TypeIcon extends StatelessWidget {
         color: PokemonTypeColors.typeColors[type],
       ),
       child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: iconOnly
-              ? SvgPicture.asset(
-                  'assets/svg/$type.svg',
-                  width: 20,
-                  height: 20,
-                )
-              : Container(
-                  constraints: const BoxConstraints(maxWidth: 150),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/$type.svg',
-                        width: 20,
-                        height: 20,
+        padding: const EdgeInsets.all(8.0),
+        child: iconOnly
+            ? SvgPicture.asset(
+                'assets/svg/types/$type.svg',
+                width: 20,
+                height: 20,
+              )
+            : Container(
+                constraints: const BoxConstraints(maxWidth: 150),
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      'assets/svg/types/$type.svg',
+                      width: 20,
+                      height: 20,
+                    ),
+                    const SizedBox(
+                      width: 50,
+                    ),
+                    Text(
+                      type.toUpperCase(),
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(
-                        width: 50,
-                      ),
-                      Text(
-                        type.toUpperCase(),
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                )),
+                    ),
+                  ],
+                ),
+              ),
+      ),
     );
   }
 }
